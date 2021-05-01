@@ -7,13 +7,17 @@
 	<!-- 글쓰기  ------------------------------------------------------------------------------->
 	<div class="contents_write col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
 		
-		<form action = "write.do" method="post" enctype="multipart/form-data">
-					 
+		<form action = "write.do" method="post" >
+					 <!-- enctype="multipart/form-data" -->
+			
 			<div class="form-group">
+			
 			    <label for="author"><h2>작성자</h2></label>
 			    <input type="text" class="form-control" name="author">
+			
 			    <label for="title"><h2>제목</h2></label>
 			    <input type="text" class="form-control" placeholder="제목을 입력해주세요" name ="title">
+		  	
 		  	</div><!-- 제목 그룹 -->
 		  	
 			<!-- 거주상황 표기 -->
@@ -44,15 +48,18 @@
 		  	</div> -->
 
 		  	<div class="form-group">
+		  	
 		  		<label for="content"><h1>내용</h1></label>
-		  		<textarea class="form-control summernote" rows="10" name="content" placeholder="홈꾸와 멋진 집을 공유해주세요">
-		  		</textarea>
+		  		<textarea class="form-control summernote" rows="10" name="content" placeholder="홈꾸와 멋진 집을 공유해주세요"></textarea>
+		  	
 		  	</div><!-- 내용 그룹 -->
+	
 		  	<!-- 비밀번호 :<input type = password name = pw size=10 maxlength=10><p> -->
 		  <!-- 	<input type="button" class="btn btn-warning btn-lg" value="대표사진 선택"> 	
 		  	<input type="button" class="btn btn-warning btn-lg" onclick="delbtn();" value="사진 삭제"> 	 -->
+	
 			<input type="submit" class="btn btn-danger btn-lg" onclick="alert('글쓰기가 완료되었습니다')" value="글쓰기 완료">  
-			 <a href="list.do" class="btn btn-danger btn-lg" role="button">글목록</a>
+			 <a href="list.jsp" class="btn btn-danger btn-lg" role="button">글목록</a>
 			
 		</form>	    	
     </div><!--contents_write  ---------------------------------------------------------------------------------------------------------->
@@ -79,10 +86,14 @@
 
 	<!-- 글쓰기 양식 폼 관련 스크립트  -->	
  	<script>
-      $('.summernote').summernote({
-        tabsize: 2,
-        height: 400
-      });
+ 	$(document).ready(function() {
+ 		  $('.summernote').summernote({
+ 			    tabsize: 2,
+ 			    height: 400
+ 		        maxHeight: null, 		    
+ 		        lang : 'ko-KR'
+ 		  });
+ 		});
+     
     </script>	
-	
 <%@include file ="footer.jsp" %>

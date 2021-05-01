@@ -80,10 +80,14 @@
 
 	<!-- 글쓰기 양식 폼 관련 스크립트  -->	
  	<script>
-      $('.summernote').summernote({
-        tabsize: 2,
-        height: 400
-      });
+ 	$(document).ready(function() {
+ 		  $('.summernote').summernote({
+ 			    tabsize: 2,
+ 			    height: 400
+ 		        maxHeight: null, 		    
+ 		        lang : 'ko-KR'
+ 		  });
+ 		});
+     
     </script>	
-	
 <%@include file ="footer.jsp" %>
