@@ -8,6 +8,10 @@
   <name>boardspring6 Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
+  
+  <!-- @postmapping 쓰려고스프링5.0.7.RELEASE에서 postmapping 안되서 5.0.7.RELEASE로 변경 -->
+  
+  
   <!-- 오라클 드라이버 다운로드 받는 위치 지정 -->
   <repositories>
      <repository>
@@ -21,18 +25,19 @@
     <dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-context</artifactId>
-  		<version>3.2.3.RELEASE</version>
+  		<version>5.0.7.RELEASE</version>
   	</dependency>
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-expression</artifactId>
-  		<version>3.2.3.RELEASE</version>
+  		<version>5.0.7.RELEASE</version>
   	</dependency>
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-beans</artifactId>
-  		<version>3.2.3.RELEASE</version>
+  		<version>5.0.7.RELEASE</version>
   	</dependency>
+  	
   	<dependency>
   		<groupId>org.aspectj</groupId>
   		<artifactId>aspectjweaver</artifactId>
@@ -48,12 +53,12 @@
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-web</artifactId>
-  		<version>3.2.3.RELEASE</version>
+  		<version>5.0.7.RELEASE</version>
   	</dependency>
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-webmvc</artifactId>
-  		<version>3.2.3.RELEASE</version>
+  		<version>5.0.7.RELEASE</version>
   	</dependency>
   	
   	<!-- 스프링의 유효성검사때문에 -->
@@ -73,7 +78,7 @@
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-jdbc</artifactId>
-  		<version>3.2.3.RELEASE</version>
+  		<version>5.0.7.RELEASE</version>
   	</dependency>
   	
   	<!-- oracle jdbc driver-->
@@ -123,7 +128,7 @@
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-orm</artifactId>
-  		<version>3.2.3.RELEASE</version>
+  		<version>5.0.7.RELEASE</version>
   	</dependency>
   	
   	<!--spring mybatis에 대한 설정  -->
