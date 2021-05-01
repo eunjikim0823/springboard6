@@ -59,7 +59,7 @@
 		  	<input type="button" class="btn btn-warning btn-lg" onclick="delbtn();" value="사진 삭제"> 	 -->
 	
 			<input type="submit" class="btn btn-danger btn-lg" onclick="alert('글쓰기가 완료되었습니다')" value="글쓰기 완료">  
-			 <a href="list.jsp" class="btn btn-danger btn-lg" role="button">글목록</a>
+			 <a href="list.do" class="btn btn-danger btn-lg" role="button">글목록</a>
 			
 		</form>	    	
     </div><!--contents_write  ---------------------------------------------------------------------------------------------------------->
@@ -86,14 +86,10 @@
 
 	<!-- 글쓰기 양식 폼 관련 스크립트  -->	
  	<script>
- 	$(document).ready(function() {
- 		  $('.summernote').summernote({
- 			    tabsize: 2,
- 			    height: 400
- 		        maxHeight: null, 		    
- 		        lang : 'ko-KR'
- 		  });
- 		});
-     
+      $('.summernote').summernote({
+        tabsize: 2,
+        height: 400
+      });
     </script>	
+	
 <%@include file ="footer.jsp" %>

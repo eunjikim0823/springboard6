@@ -45,9 +45,11 @@
 
 
 		  	<div class="form-group">
+		  		
 		  		<label for="content"><h1>내용</h1></label>
 		  		<textarea class="form-control summernote" rows="10" name="content" placeholder="홈꾸와 멋진 집을 공유해주세요">
 		  		</textarea>
+		  	
 		  	</div><!-- 내용 그룹 -->
 		  	<!-- 비밀번호 :<input type = password name = pw size=10 maxlength=10><p> -->
 		  <!-- 	<input type="button" class="btn btn-warning btn-lg" value="대표사진 선택"> 	
@@ -79,15 +81,11 @@
 		
 
 	<!-- 글쓰기 양식 폼 관련 스크립트  -->	
- 	<script>
- 	$(document).ready(function() {
- 		  $('.summernote').summernote({
- 			    tabsize: 2,
- 			    height: 400
- 		        maxHeight: null, 		    
- 		        lang : 'ko-KR'
- 		  });
- 		});
-     
+	<script>
+      $('.summernote').summernote({
+        tabsize: 2,
+        height: 400
+      });
     </script>	
+	
 <%@include file ="footer.jsp" %>

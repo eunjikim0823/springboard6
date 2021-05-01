@@ -12,7 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class UpdateActionController {
       //setCommandClass(BoardCommand command)상속받아서 이미 가지고 있는 상태
-@Autowired
+
+	@Autowired
 BoardDAO dao;//BoardDAO dao=new BoardDAO();
 	/*
 	public void setDao(BoardDAO dao) { //<property name="dao"></property>

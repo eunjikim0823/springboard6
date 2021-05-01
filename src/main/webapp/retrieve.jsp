@@ -25,13 +25,13 @@
 		  	<div class="form-group">
 	
 		  		<label for="num"><h2>글번호</h2></label>
-			    <input type="text" class="form-control" value="<%= num %>"readonly="readonly"/>
+			    <input type="text" class="form-control" name ="num" value="<%= num %>"readonly="readonly"/>
 	
 			    <label for="author"><h2>작성자</h2></label>
-			    <input type="text" class="form-control" value="<%= author %>">
+			    <input type="text" class="form-control" name="author" value="<%= author %>">
 	
 			    <label for="title"><h2>제목</h2></label>
-			    <input type="text" class="form-control" value="<%= title %>">
+			    <input type="text" class="form-control" name ="title" value="<%= title %>">
 	
 		  	</div><!-- 제목 그룹 -->
 		  	
@@ -105,15 +105,10 @@
 	
 	<!-- 글쓰기 양식 폼 관련 스크립트  -->	
  	<script>
- 	$(document).ready(function() {
- 		  $('.summernote').summernote({
- 			    tabsize: 2,
- 			    height: 400
- 		        maxHeight: null, 		    
- 		        lang : 'ko-KR'
- 		  });
- 		});
-     
+      $('.summernote').summernote({
+        tabsize: 2,
+        height: 400
+      });
     </script>	
 	
 <%@include file ="footer.jsp" %>

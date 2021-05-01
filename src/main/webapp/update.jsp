@@ -5,6 +5,7 @@
     <!-- css 파일   -->
     <link href="css/Contents.css" rel="stylesheet">
 
+ <!--  글 상세보기 및 수정  -->
  <%
   //Board data=(Board)request.getAttribute("data");//${data}
    BoardCommand data=(BoardCommand)request.getAttribute("data");//${data}
@@ -15,23 +16,22 @@
 %>
 
 
-
 	<!-- 글 상세보기 및 수정----------------------------------------------------------->
 	<div class="contents_write col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
 		
-		<form action="update.do" method="post" enctype="multipart/form-data">
-					 
+		<form action="update.do" method="post" >
+					 <!-- enctype="multipart/form-data" -->
 		  	
 		  	<div class="form-group">
-	
+				
 		  		<label for="num"><h2>글번호</h2></label>
-			    <input type="text" class="form-control" value="<%= num %>"readonly="readonly"/>
+			    <input type="text"  name ="num" class="form-control" value="<%= num %>" readonly="readonly"/>
 	
 			    <label for="author"><h2>작성자</h2></label>
-			    <input type="text" class="form-control" value="<%= author %>">
+			    <input type="text" name="author" class="form-control" value="<%= author %>">
 	
 			    <label for="title"><h2>제목</h2></label>
-			    <input type="text" class="form-control" value="<%= title %>">
+			    <input type="text" name ="title" class="form-control" value="<%= title %>">
 	
 		  	</div><!-- 제목 그룹 -->
 		  	
@@ -68,8 +68,8 @@
 		  <div class="form-group">
 		  		<label for="content"><h1>내용</h1></label>
 		  		<textarea class="form-control summernote" rows="10" name="content" placeholder="홈꾸와 멋진 집을 공유해주세요">
-		  		</textarea><!-- 내용 그룹 -->
-		  	
+		  		<%= content %></textarea><!-- 내용 그룹 -->
+		  </div>
 		  	
 		  	<!-- 비밀번호 :<input type = password name = pw size=10 maxlength=10><p> -->
 		  <!-- 	<input type="button" class="btn btn-warning btn-lg" value="대표사진 선택"> 	
@@ -77,7 +77,7 @@
 		
 			<input type="submit" class="btn btn-danger btn-lg" onclick="alert('글수정이 완료되었습니다')"  value="수정완료" />
            <a href="delete.do?num=<%= num %>" type="button" class="btn btn-danger btn-lg">삭제</a>
-			<input type="button" class="btn btn-danger btn-lg" action="list.jsp" value="글목록">
+			<input type="button" class="btn btn-danger btn-lg" action="list.do" value="글목록">
 			
 		<!-- 	<input type="submit" class="btn btn-danger btn-lg" onclick="alert('글쓰기가 완료되었습니다')" value="글쓰기 완료">  
 			<input type="button" class="btn btn-danger btn-lg" action="list.jsp" value="글목록">   -->
@@ -103,13 +103,11 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 		
-
-	<!-- 글쓰기 양식 폼 관련 스크립트  -->	
- 	<script>
+<!-- 글쓰기 양식 폼 관련 스크립트  -->	
+ <script>
       $('.summernote').summernote({
         tabsize: 2,
         height: 400
       });
     </script>	
-	
 <%@include file ="footer.jsp" %>

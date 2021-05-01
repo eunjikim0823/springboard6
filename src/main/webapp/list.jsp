@@ -83,7 +83,7 @@
 					
 			<!-- https://ohou.se/projects/30967/detail	 -->		
 				
-				<div class="row">	 <!-- 컨텐츠 업로드 db연결  ★★★ ★★★ ★★★ ★★★-->
+				<!-- <div class="row"> -->	 <!-- 컨텐츠 업로드 db연결  ★★★ ★★★ ★★★ ★★★-->
 						<div class="col-md-4 col-sm-4">
 						    <article class="content">
 						    
@@ -119,7 +119,7 @@
 						    </article><!-- content -->
 						</div><!-- class="col-md-4 col-sm-4" --> 
 
-				</div>	
+				<!-- </div>	 -->
 				
 				<%
 				} //end while
