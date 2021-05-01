@@ -83,39 +83,13 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 		
-  <!-- 서머노트를 위해 추가해야할 부분 -->
-  <script src="${pageContext.request.contextPath}/resources/summernote/summernote-lite.js"></script>
-  <script src="${pageContext.request.contextPath}/resources/summernote/lang/summernote-ko-KR.js"></script>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/summernote/summernote-lite.css">
-  <!--  -->
+
 	<!-- 글쓰기 양식 폼 관련 스크립트  -->	
  	<script>
       $('.summernote').summernote({
         tabsize: 2,
         height: 400
-        
-        callbacks: {	//이미지 첨부하는 부분
-            onImageUpload : function(files) {
-                 uploadSummernoteImageFile(files[0],this);
-             }
-         }
-     });
-      
-      function uploadSummernoteImageFile(file, editor) {
-          data = new FormData();
-          data.append("file", file);
-          $.ajax({
-              data : data,
-              type : "POST",
-              url : "/uploadSummernoteImageFile",
-              contentType : false,
-              processData : false,
-              success : function(data) {
-                  //항상 업로드된 파일의 url이 있어야 한다.
-                  $(editor).summernote('insertImage', data.url);
-              }
-          });
-      }
+      });
     </script>	
 	
 <%@include file ="footer.jsp" %>

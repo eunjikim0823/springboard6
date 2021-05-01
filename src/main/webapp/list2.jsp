@@ -3,7 +3,6 @@
 <%@include file ="header.jsp" %>
     <link href="../css/Contents.css" rel="stylesheet">
 <%@ page import="java.util.*,content.*"%>
-<jsp:include page="Contents_write.html" flush="true" /> 
 
 <!--  ======================= -->
 	<nav id="Contents_Board"> 
