@@ -1,6 +1,6 @@
 package content;
 
-public class Pagination {
+public class Pagination2 {
 
 	public int getCurrentPage() {
 		return currentPage;
@@ -109,18 +109,18 @@ public class Pagination {
 	// 다음 페이지 존재 여부
 	private boolean hasNextPage;
 
-	public Pagination(int currentPage, int cntPerPage, int pageSize) {
+	public Pagination2(int currentPage, int cntPerPage, int pageSize) {
 		// 강제입력방지
 		if (currentPage < 1) {
 			currentPage = 1;
 		}
 		// 10,20,30개 단위 이외 처리 방지
-		if (cntPerPage != 12 && cntPerPage != 20 && cntPerPage != 30) {
-			cntPerPage = 12;
+		if (cntPerPage != 10 && cntPerPage != 20 && cntPerPage != 30) {
+			cntPerPage = 10;
 		}
 		// 하단 페이지 갯수 10개로 제한
-		if (pageSize != 12) {
-			pageSize = 12;
+		if (pageSize != 10) {
+			pageSize = 10;
 		}
 		this.currentPage = currentPage;
 		this.cntPerPage = cntPerPage;
