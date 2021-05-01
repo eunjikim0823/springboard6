@@ -52,6 +52,7 @@ public class WriteActionController {
 		data.setContent(content);
 		dao.write(data);//data.getWriter() =>#{writer},,,
 		
+		System.out.println("content="+content);
 		return new ModelAndView("redirect:/list.do");
 	}
 
