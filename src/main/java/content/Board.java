@@ -1,10 +1,9 @@
 package content;
 
-import lombok.Data;
 
 //DTO -> 입력폼의 name와 반드시 같아야 된다. ->액션태그때문에
 
-@Data
+
 public class Board { //BoardDTO,BoardVO
 
 	private int num;//게시물번호

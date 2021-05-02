@@ -21,6 +21,11 @@ public class BoardCommand {
 	String searchName;//검색분야
 	String searchValue;//검색어
 	
+	String searchType;//주거형태
+	String searchHsize;//평수
+	String searchMate;//거주형태
+	
+	
 	public int getNum() { //#{num}
 		System.out.println("getNum()호출됨");
 		return num;
@@ -112,5 +117,28 @@ public class BoardCommand {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
+	public String getSearchType() {
+		return searchType;
+	}
+
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+	}
+
+	public String getSearchHsize() {
+		return searchHsize;
+	}
+
+	public void setSearchHsize(String searchHsize) {
+		this.searchHsize = searchHsize;
+	}
+
+	public String getSearchMate() {
+		return searchMate;
+	}
+
+	public void setSearchMate(String searchMate) {
+		this.searchMate = searchMate;
+	}
+
 }
