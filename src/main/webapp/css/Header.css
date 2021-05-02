@@ -10,7 +10,7 @@ ul,li,ol {list-style:none;}
 
 /* 헤더 글자 위치 재설정 */
 
-.icon{margin-top:5px;}
+.icon{margin-top:10px;}
 
 .contents {padding:30px; text-align:center;
 					font-family: 'Hi Melody', cursive;
