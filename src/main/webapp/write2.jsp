@@ -16,32 +16,32 @@
 			    <input type="text" class="form-control" placeholder="제목을 입력해주세요" name ="title">
 		 		</div> <!-- 제목 그룹 -->
 		  	
-			<!-- 거주상황 표기 -->
-		  	<!-- <div class="livingtype">
-			  	<select name="property" class="">
-			  		<option selected value hidden class="">주거형태</option>
-			  		<option value="1" class="">아파트</option>
-			  		<option value="2" class="">빌라&연립</option>
-			  		<option value="3" class="">오피스텔</option>
-			  		<option value="4" class="">주택</option>
+				<!-- 거주상황 표기 -->
+		  	<div class="livingtype">
+			  	<select name="type" class="type">
+			  		<option selected value hidden class="type">주거형태</option>
+			  		<option value="아파트" class="아파트">아파트</option>
+			  		<option value="빌라&연립" class="빌라&연립">빌라&연립</option>
+			  		<option value="오피스텔" class="오피스텔">오피스텔</option>
+			  		<option value="주택" class="주택">주택</option>
 			  	</select>
 			  	
-			  	<select name="property" class="">
-			  		<option selected value hidden class="">평수</option>
-			  		<option value="1" class="">10평 이하</option>
-			  		<option value="2" class="">10평</option>
-			  		<option value="3" class="">20평</option>
-			  		<option value="4" class="">30평</option>
+			  	<select name="hsize" class="hsize">
+			  		<option selected value hidden class="hsize">평수</option>
+			  		<option value="10평 이하" class="10평 이하">10평 이하</option>
+			  		<option value="10평" class="10평">10평</option>
+			  		<option value="20평" class="20평">20평</option>
+			  		<option value="30평" class="">30평</option>
 			  	</select>
 			  	
-			  	<select name="property" class="">
-			  		<option selected value hidden class="">거주형태</option>
-			  		<option value="1" class="">싱글라이프</option>
-			  		<option value="2" class="">신혼부부</option>
-			  		<option value="3" class="">아이가 있는 집</option>
-			  		<option value="4" class="">부모님과 함께 사는 집</option>
+			  	<select name="mate" class="mate">
+			  		<option selected value hidden class="mate">거주형태</option>
+			  		<option value="싱글라이프" class="싱글라이프">싱글라이프</option>
+			  		<option value="신혼부부" class="신혼부부">신혼부부</option>
+			  		<option value="아이가 있는 집" class="아이가 있는 집">아이가 있는 집</option>
+			  		<option value="부모님과 함께 사는 집" class="부모님과 함께 사는 집">부모님과 함께 사는 집</option>
 			  	</select> 
-		  	</div> -->
+		  	</div>
 
 
 		  	<div class="form-group">

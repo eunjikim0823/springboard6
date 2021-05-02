@@ -116,7 +116,7 @@
 						       <div class="style_tag">
 							       <hr>
 							      <%=hsize%> &nbsp;&nbsp; <%=mate%> &nbsp;&nbsp; <%=type%>
-							       타입 사이즈 가족<hr/>
+							       <hr/>
 						       </div><!-- style_tag -->       
 						    </article><!-- content -->
 						</div><!-- class="col-md-4 col-sm-4" --> 
