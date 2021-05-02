@@ -18,8 +18,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
  <!-- 3.글쓰기 (lee.BoardCommand) #{매개변수명(=멤버변수명)}-->
  <insert id="write" parameterType="board">
-     insert into springboard(num,author,title,content,writeday)
-     values(#{num},#{author},#{title},#{content},sysdate)
+     insert into springboard(num,author,title,content,writeday,hsize,mate,type)
+     values(#{num},#{author},#{title},#{content},sysdate,#{hsize},#{mate},#{type})
  </insert>
  
  <!-- 4.글상세보기(조회수증가) -->
@@ -34,8 +34,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
  <!-- 6.글수정하기 -->
  <update id="update" parameterType="board">
-      update springboard 
-      set title=#{title},content=#{content},author=#{author}
+      update springboard set 
+      title=#{title},content=#{content},author=#{author},
+      hsize=#{hsize},mate=#{mate},type=#{type}
       where num=#{num}
  </update>
  <!-- 7.글삭제하기 -->
@@ -53,7 +54,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         from (
         select row_number() over(order by num desc) as
         row_num
-        ,num, author, title, content, writeday, readcnt
+        ,num, author, title, content, writeday, readcnt,,hsize,mate,type
         from springboard
         )
  </select>
@@ -63,7 +64,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         from (
         select row_number() over(order by num desc) as
         row_num
-        ,num, author, title, content, writeday, readcnt
+        ,num, author, title, content, writeday, readcnt,hsize,mate,type
         from springboard
         )
         <if test="firstRecordIndex !=null and lastRecordIndex != null">

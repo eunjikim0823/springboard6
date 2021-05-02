@@ -1,6 +1,6 @@
 package content;
 
-public class Pagination2 {
+public class Pagination10개기준 {
 
 	public int getCurrentPage() {
 		return currentPage;
@@ -109,7 +109,7 @@ public class Pagination2 {
 	// 다음 페이지 존재 여부
 	private boolean hasNextPage;
 
-	public Pagination2(int currentPage, int cntPerPage, int pageSize) {
+	public Pagination10개기준(int currentPage, int cntPerPage, int pageSize) {
 		// 강제입력방지
 		if (currentPage < 1) {
 			currentPage = 1;

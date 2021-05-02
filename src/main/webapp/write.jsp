@@ -4,6 +4,7 @@
     <!-- css 파일   -->
     <link href="css/Contents.css" rel="stylesheet">
 
+
 	<!-- 글쓰기  ------------------------------------------------------------------------------->
 	<div class="contents_write col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
 		
@@ -90,32 +91,13 @@
   <!--  -->
 	<!-- 글쓰기 양식 폼 관련 스크립트  -->	
  	<script>
-      $('.summernote').summernote({
-        tabsize: 2,
-        height: 400
-        
-        callbacks: {	//이미지 첨부하는 부분
-            onImageUpload : function(files) {
-                 uploadSummernoteImageFile(files[0],this);
-             }
-         }
-     });
-      
-      function uploadSummernoteImageFile(file, editor) {
-          data = new FormData();
-          data.append("file", file);
-          $.ajax({
-              data : data,
-              type : "POST",
-              url : "/uploadSummernoteImageFile",
-              contentType : false,
-              processData : false,
-              success : function(data) {
-                  //항상 업로드된 파일의 url이 있어야 한다.
-                  $(editor).summernote('insertImage', data.url);
-              }
-          });
-      }
+ 	  
+    $('.summernote').summernote({
+     tabsize: 2,
+     height: 400
+
+ 	
+  });
     </script>	
 	
 <%@include file ="footer.jsp" %>

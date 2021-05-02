@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file ="header.jsp" %>
-    <link href="css/Contents.css" rel="stylesheet">
+    <link href="../css/Contents.css" rel="stylesheet">
 <%@ page import="java.util.*,content.*"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
 
 <!--  ======================= -->
 	<nav id="Contents_Board"> 
@@ -44,7 +41,7 @@
 							<li><a href="#">30평대</a></li>	
 						</ul>
 					</li>		
-			   <!-- 드롭다운 부분 추가 4 -->	
+				<!-- 드롭다운 부분 추가 4 -->	
 					<li class="dropdown">
 						<a data-toggle="dropdown" href="#">거주형태
 							<span class="caret"></span></a>	
@@ -56,14 +53,13 @@
 						</ul>
 					</li>			
 				</ul>
-				
-			<div class="text-center">
-			  <a href="write.jsp" class="btn btn-danger icon3" role="button">글작성</a>
-			</div>	
-			
+				<input type="button" class="btn btn-lignt icon3" value="적용">	
+				<a href="Contents_write.do">
+					<input type="button" class="btn btn-danger icon3" value="글쓰기">
+				</a>						
+			</div><!-- container -->
 		</nav>	
-		<hr/>
-		
+
 			<%
 				ArrayList list = (ArrayList) request.getAttribute("list2");//${list}
 				if (list != null) {//데이터가 존재한다면
@@ -75,9 +71,7 @@
 						int num = data.getNum();
 						String title = data.getTitle();
 						String author = data.getAuthor();
-						String hsize = data.getHsize();
-						String mate = data.getMate();
-						String type = data.getType();
+						
 						//String writeday=data.getDate();//날짜출력 ->10글자뿐만 출력하라
 						String writeday = data.getWriteday();
 						//------------------------------------------------
@@ -86,27 +80,18 @@
 					
 			<!-- https://ohou.se/projects/30967/detail	 -->		
 				
-				<!-- <div class="row"> -->	 <!-- 컨텐츠 업로드 db연결  ★★★ ★★★ ★★★ ★★★-->
+				<div class="row">	 <!-- 컨텐츠 업로드 db연결  ★★★ ★★★ ★★★ ★★★-->
 						<div class="col-md-4 col-sm-4">
 						    <article class="content">
-						    
-						    	&nbsp; &nbsp;&nbsp;
-						    	조회수:<%=readcnt%>
-						    	&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-						    	&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-						    	작성날짜:<%=writeday.substring(0, 10)%>
-						      
+						    	조회수:<%=readcnt%>&nbsp; &nbsp;&nbsp; &nbsp; 작성날짜:<%=writeday.substring(0, 10)%>
 						      <a href="retrieve.do?num=<%=num%>">
-						           
 						            <div class="thumbnail">
-						              <img src="picture/인기게시물/이미지3.jpg" alt="1" class="img-rounded img-responsive">
+						              <img src="../picture/인기게시물/이미지3.jpg" alt="1" class="img-rounded img-responsive">
 						            <%-- 	<%=filename%> --%>
 						            </div><!-- content_img -->
-						           
 						            <div class="text">
 						              <%=title%>
 						            </div><!-- text -->  
-						       
 						       </a> 
 						             
 					            <div class="content_writer">
@@ -115,13 +100,12 @@
 						       					          
 						       <div class="style_tag">
 							       <hr>
-							      <%=hsize%> &nbsp;&nbsp; <%=mate%> &nbsp;&nbsp; <%=type%>
-							       타입 사이즈 가족<hr/>
+							    <%--    <%=hsize%> &nbsp;&nbsp; <%=mate%> &nbsp;&nbsp; <%=type%>	 --%>						 
 						       </div><!-- style_tag -->       
 						    </article><!-- content -->
 						</div><!-- class="col-md-4 col-sm-4" --> 
 
-				<!-- </div>	 -->
+				</div>	
 				
 				<%
 				} //end while
@@ -134,7 +118,7 @@
 					    <article class="content">
 					      <a href="#" >
 					            <div class=content_img>
-					              <img src="picture/인기게시물/이미지3.jpg" alt="1" class="img-rounded img-responsive">
+					              <img src="../picture/인기게시물/이미지3.jpg" alt="1" class="img-rounded img-responsive">
 					            </div><!-- content_img -->
 					            <div class="text">
 					              아날로그한 취향을 가진 마케터의 원룸 아지트
@@ -161,7 +145,7 @@
 					    <article class="content">
 					      <a href="#" >
 					            <div class=content_img>
-					              <img src="picture/인기게시물/인기게시물2.jpg" alt="2" class="img-rounded img-responsive">
+					              <img src="../picture/인기게시물/인기게시물2.jpg" alt="2" class="img-rounded img-responsive">
 					            </div><!-- content_img -->
 					            <div class="text">
 					               심플하면서도 취향이 드러나는 원룸의 매력
@@ -185,7 +169,7 @@
 					    <article class="content">
 					      <a href="#" >
 					            <div class=content_img>
-					              <img src="picture/인기게시물/인기게시물3.jpg" alt="3" class="img-rounded img-responsive">
+					              <img src="../picture/인기게시물/인기게시물3.jpg" alt="3" class="img-rounded img-responsive">
 					            </div><!--content_img -->
 					            <div class="text">
 					              신랑과 내 취향을 모두 담아, 24평 신혼집
@@ -211,7 +195,7 @@
 					    <article class="content">
 					      <a href="#" >
 					            <div class=content_img>
-					              <img src="picture/인기게시물/인기게시물4.jpg" alt="4" class="img-rounded img-responsive">
+					              <img src="../picture/인기게시물/인기게시물4.jpg" alt="4" class="img-rounded img-responsive">
 					            </div><!-- content_img -->
 					            <div class="text">
 					            	 24년 된 18평 빌라, 천장을 뜯어봤어요!
@@ -236,7 +220,7 @@
 					    <article class="content">
 					      <a href="#" >
 					            <div class=content_img>
-					              <img src="picture/컨텐츠/컨텐츠5.jpg" alt="5" class="img-rounded img-responsive">
+					              <img src="../picture/컨텐츠/컨텐츠5.jpg" alt="5" class="img-rounded img-responsive">
 					            </div><!-- content_img -->
 					            <div class="text">
 					            	 제가 있는 이곳이 천국이네요
@@ -260,7 +244,7 @@
 					    <article class="content">
 					      <a href="#" >
 					            <div class=content_img>
-					              <img src="picture/컨텐츠/컨텐츠6.jpg" alt="6" class="img-rounded img-responsive">
+					              <img src="../picture/컨텐츠/컨텐츠6.jpg" alt="6" class="img-rounded img-responsive">
 					            </div><!-- content_img -->
 					            <div class="text">
 					            	 워라벨 찾기 스튜디오 겸	 생활 공간
@@ -286,7 +270,7 @@
 					    <article class="content">
 					      <a href="#" >
 					            <div class=content_img>
-					              <img src="picture/컨텐츠/컨텐츠7.jpg" alt="7" class="img-rounded img-responsive">
+					              <img src="../picture/컨텐츠/컨텐츠7.jpg" alt="7" class="img-rounded img-responsive">
 					            </div><!-- content_img -->
 					            <div class="text">
 					            	 오래되고 낡은 연립주택의 변신, 분수를 모르는 집
@@ -310,7 +294,7 @@
 					    <article class="content">
 					      <a href="#" >
 					            <div class=content_img>
-					              <img src="picture/컨텐츠/컨텐츠8.jpg" alt="8" class="img-rounded img-responsive">
+					              <img src="../picture/컨텐츠/컨텐츠8.jpg" alt="8" class="img-rounded img-responsive">
 					            </div><!-- content_img -->
 					            <div class="text">
 					            	 집이란, 매일 보게 될 풍경을 선택하는 일
@@ -334,7 +318,7 @@
 					    <article class="content">
 					      <a href="#" >
 					            <div class=content_img>
-					              <img src="picture/컨텐츠/컨텐츠9.jpg" alt="9" class="img-rounded img-responsive">
+					              <img src="../picture/컨텐츠/컨텐츠9.jpg" alt="9" class="img-rounded img-responsive">
 					            </div><!-- content_img -->
 					            <div class="text">
 					            	 자취만 13년! 디자이너가 꾸민 6평 나만의 세상

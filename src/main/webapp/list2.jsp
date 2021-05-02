@@ -61,7 +61,7 @@
 		</nav>	
 
 			<%
-				ArrayList list = (ArrayList) request.getAttribute("list");//${list}
+				ArrayList list = (ArrayList) request.getAttribute("list2");//${list}
 				if (list != null) {//데이터가 존재한다면
 					Iterator iter = list.iterator();
 					while (iter.hasNext()) {//꺼낼 데이터가 존재한다면
@@ -71,6 +71,9 @@
 						int num = data.getNum();
 						String title = data.getTitle();
 						String author = data.getAuthor();
+						String hsize = data.getHsize();
+						String mate = data.getMate();
+						String type = data.getType();
 						//String writeday=data.getDate();//날짜출력 ->10글자뿐만 출력하라
 						String writeday = data.getWriteday();
 						//------------------------------------------------
@@ -99,9 +102,7 @@
 						       					          
 						       <div class="style_tag">
 							       <hr>
-							       	<%-- ${content.type}&nbsp;&nbsp;${content.size}&nbsp;&nbsp;${content.mate}
-							       --%>
-							       타입 사이즈 가족
+							       <%=hsize%> &nbsp;&nbsp; <%=mate%> &nbsp;&nbsp; <%=type%>							 
 						       </div><!-- style_tag -->       
 						    </article><!-- content -->
 						</div><!-- class="col-md-4 col-sm-4" --> 

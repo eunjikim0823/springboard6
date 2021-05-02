@@ -75,9 +75,7 @@
 						int num = data.getNum();
 						String title = data.getTitle();
 						String author = data.getAuthor();
-						String hsize = data.getHsize();
-						String mate = data.getMate();
-						String type = data.getType();
+						
 						//String writeday=data.getDate();//날짜출력 ->10글자뿐만 출력하라
 						String writeday = data.getWriteday();
 						//------------------------------------------------
@@ -115,7 +113,7 @@
 						       					          
 						       <div class="style_tag">
 							       <hr>
-							      <%=hsize%> &nbsp;&nbsp; <%=mate%> &nbsp;&nbsp; <%=type%>
+							   <%--    <%=hsize%> &nbsp;&nbsp; <%=mate%> &nbsp;&nbsp; <%=type%> --%>
 							       타입 사이즈 가족<hr/>
 						       </div><!-- style_tag -->       
 						    </article><!-- content -->

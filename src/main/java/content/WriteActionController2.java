@@ -22,7 +22,7 @@ import com.google.gson.JsonObject;
 //AbstractCommandController =>입력을 받아서 자동적으로 Setter Method 호출
 //public class WriteActionController extends AbstractCommandController {
 @Controller
-public class WriteActionController {
+public class WriteActionController2 {
       //setCommandClass(BoardCommand command)상속받아서 이미 가지고 있는 상태
 	
 	
@@ -44,11 +44,7 @@ public class WriteActionController {
 	@RequestMapping("/write.do")
 	protected ModelAndView test(@RequestParam("title") String title,
 			                                       @RequestParam("author") String author,
-			                                       @RequestParam("content") String content,
-			                                       @RequestParam("hsize") String hsize,
-			                                       @RequestParam("mate") String mate,
-			                                       @RequestParam("type") String type
-			)
+			                                       @RequestParam("content") String content)
 			                                           throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("WriteActionController의 handle()호출됨");
@@ -67,9 +63,6 @@ public class WriteActionController {
 		data.setTitle(title);
 		data.setAuthor(author);
 		data.setContent(content);
-		data.setHsize(hsize);
-		data.setMate(mate);
-		data.setType(type);
 		dao.write(data);//data.getWriter() =>#{writer},,,
 		
 		System.out.println("content="+content);

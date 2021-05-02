@@ -5,18 +5,13 @@ package content;
 //                              구성한 클래스(작성자이름,글제목,글내용) 게시물번호,조회수x
 //스프링의 jsp의 action태그처럼 ->입력받은 값을 자동으로 Setter Method를 호출
 
-public class BoardCommand {
+public class BoardCommand2 {
     
 	int num;
 	String author,title,content;//num,date,readcnt (x)
     //추가
 	String writeday;
 	int readcnt;
-	
-	String hsize,mate,type;
-	
-
-
 	//DTO와 상관이없지만 MyBatis검색때문에 필요한 클래스때문에 추가
 	String searchName;//검색분야
 	String searchValue;//검색어
@@ -89,28 +84,6 @@ public class BoardCommand {
 		this.content = content;
 
 	}
-	public String getHsize() {
-		return hsize;
-	}
-
-	public void setHsize(String hsize) {
-		this.hsize = hsize;
-	}
-
-	public String getMate() {
-		return mate;
-	}
-
-	public void setMate(String mate) {
-		this.mate = mate;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
+	
 	
 }

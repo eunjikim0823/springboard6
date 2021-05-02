@@ -1,38 +1,12 @@
 package content;
 
-import lombok.Data;
-
 //DTO -> 입력폼의 name와 반드시 같아야 된다. ->액션태그때문에
-
-@Data
-public class Board { //BoardDTO,BoardVO
+public class Board2 { //BoardDTO,BoardVO
 
 	private int num;//게시물번호
 	private String author,title,content,date;//작성자,글제목,글내용,작성일
 	private int readcnt;//조회수
 	
-
-	private String hsize,mate,type;
-	
-	
-	public String getHsize() {
-		return hsize;
-	}
-	public void setHsize(String hsize) {
-		this.hsize = hsize;
-	}
-	public String getMate() {
-		return mate;
-	}
-	public void setMate(String mate) {
-		this.mate = mate;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
 	public int getNum() {
 		return num;
 	}

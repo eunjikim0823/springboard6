@@ -9,7 +9,8 @@
   <url>http://maven.apache.org</url>
   
   
-  <!-- @postmapping 쓰려고스프링5.0.7.RELEASE에서 postmapping 안되서 5.0.7.RELEASE로 변경 -->
+  <!-- @postmapping 쓰려고 스프링5.0.7.RELEASE에서 postmapping 안되서 5.0.7.RELEASE로 변경 -->
+  
   
   
   <!-- 오라클 드라이버 다운로드 받는 위치 지정 -->
@@ -191,6 +192,15 @@
               <version>1.3.1</version>
           </dependency>	
   	
+  	
+  		<!-- @Data lombok 사용 -->
+	  	<dependency>
+	 	   <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+	 	   <version>1.16.10</version> <!--버전은 그때 맞춰서-->
+		</dependency>
+	  	
+	  	
   	
   </dependencies>
   

@@ -39,8 +39,8 @@ public class ListActionController {
 		
 		
 		int currentPage = request.getParameter("currentPage") == null ? 1 : Integer.parseInt(request.getParameter("currentPage"));
-		int cntPerPage = request.getParameter("cntPerPage")  == null ? 10 : Integer.parseInt(request.getParameter("cntPerPage"));
-		int pageSize = request.getParameter("pageSize") == null ? 10 : Integer.parseInt(request.getParameter("pageSize"));
+		int cntPerPage = request.getParameter("cntPerPage")  == null ? 12 : Integer.parseInt(request.getParameter("cntPerPage"));
+		int pageSize = request.getParameter("pageSize") == null ? 12 : Integer.parseInt(request.getParameter("pageSize"));
 		
 		int listCnt = dao.getBoardTotalCnt();
         Pagination pagination = new Pagination(currentPage, cntPerPage, pageSize);
