@@ -28,6 +28,9 @@
 		   		<select name="searchName" size="1">
 	          		<option value="author">작성자</option>
     	      		<option value="title">제목</option>
+    	      		<option value="hsize">주거형태</option>
+    	      		<option value="mate">평수</option>
+    	      		<option value="type">거주형태</option>
            		</select>
 		   		<input type="text" name="searchValue">
 		  	 	<input type="submit" value="검색">
