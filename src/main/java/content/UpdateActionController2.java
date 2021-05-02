@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 //AbstractCommandController =>입력을 받아서 자동적으로 Setter Method 호출
 //스프링 =>쇼핑물
 @Controller
-public class UpdateActionController {
+public class UpdateActionController2 {
       //setCommandClass(BoardCommand command)상속받아서 이미 가지고 있는 상태
 
 	@Autowired
@@ -28,11 +28,7 @@ BoardDAO dao;//BoardDAO dao=new BoardDAO();
 	protected ModelAndView up(@RequestParam("num") int num,
 			                                     @RequestParam("title") String title,
 			                                     @RequestParam("author") String author,
-			                                     @RequestParam("content") String content,
-			                                     @RequestParam("hsize") String hsize,
-			                                     @RequestParam("mate") String mate,
-			                                     @RequestParam("type") String type
-			)
+			                                     @RequestParam("content") String content) 
                                                       throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("UpdateActionController의 handle()호출됨");
@@ -53,12 +49,9 @@ BoardDAO dao;//BoardDAO dao=new BoardDAO();
 		data.setTitle(title);
 		data.setAuthor(author);
 		data.setContent(content);
-		data.setHsize(hsize);
-		data.setMate(mate);
-		data.setType(type);
 	    dao.update(data);
 	    
-		//dao.update(num,author, title, content, 추가 hsize,mate,type);
+		//dao.update(num,author, title, content);
 		return new ModelAndView("redirect:/list.do");
 	}
 }

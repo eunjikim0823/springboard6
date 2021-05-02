@@ -13,6 +13,9 @@
   String title=data.getTitle();
   String author=data.getAuthor();
   String content=data.getContent();
+  String hsize = data.getHsize();
+  String mate = data.getMate();
+  String type = data.getType();
 %>
 
 
@@ -37,32 +40,32 @@
 		  	
 		  	
 		  	
-			<!-- 거주상황 표기 -->
-		  	<!-- <div class="livingtype">
-			  	<select name="property" class="">
-			  		<option selected value hidden class="">주거형태</option>
-			  		<option value="1" class="">아파트</option>
-			  		<option value="2" class="">빌라&연립</option>
-			  		<option value="3" class="">오피스텔</option>
-			  		<option value="4" class="">주택</option>
+		<!-- 거주상황 표기 -->
+		  	<div class="livingtype">
+			  	<select name="type" class="type">
+			  		<option><%= type %></option>
+			  		<option value="아파트" class="아파트">아파트</option>
+			  		<option value="빌라&연립" class="빌라&연립">빌라&연립</option>
+			  		<option value="오피스텔" class="오피스텔">오피스텔</option>
+			  		<option value="주택" class="주택">주택</option>
 			  	</select>
 			  	
-			  	<select name="property" class="">
-			  		<option selected value hidden class="">평수</option>
-			  		<option value="1" class="">10평 이하</option>
-			  		<option value="2" class="">10평</option>
-			  		<option value="3" class="">20평</option>
-			  		<option value="4" class="">30평</option>
+			  	<select name="hsize" class="hsize">
+			  		<option><%= hsize %></option>
+			  		<option value="10평 이하" class="10평 이하">10평 이하</option>
+			  		<option value="10평" class="10평">10평</option>
+			  		<option value="20평" class="20평">20평</option>
+			  		<option value="30평" class="">30평</option>
 			  	</select>
 			  	
-			  	<select name="property" class="">
-			  		<option selected value hidden class="">거주형태</option>
-			  		<option value="1" class="">싱글라이프</option>
-			  		<option value="2" class="">신혼부부</option>
-			  		<option value="3" class="">아이가 있는 집</option>
-			  		<option value="4" class="">부모님과 함께 사는 집</option>
+			  	<select name="mate" class="mate">
+			  	<option><%= mate %></option>
+			  		<option value="싱글라이프" class="싱글라이프">싱글라이프</option>
+			  		<option value="신혼부부" class="신혼부부">신혼부부</option>
+			  		<option value="아이가 있는 집" class="아이가 있는 집">아이가 있는 집</option>
+			  		<option value="부모님과 함께 사는 집" class="부모님과 함께 사는 집">부모님과 함께 사는 집</option>
 			  	</select> 
-		  	</div> -->
+		  	</div>
 		
 		
 		  <div class="form-group">
@@ -77,7 +80,7 @@
 		
 			<input type="submit" class="btn btn-danger btn-lg" onclick="alert('글수정이 완료되었습니다')"  value="수정완료" />
            <a href="delete.do?num=<%= num %>" type="button" class="btn btn-danger btn-lg">삭제</a>
-			<input type="button" class="btn btn-danger btn-lg" action="list.do" value="글목록">
+			<a href="list.do" class="btn btn-danger btn-lg" role="button">글목록</a>
 			
 		<!-- 	<input type="submit" class="btn btn-danger btn-lg" onclick="alert('글쓰기가 완료되었습니다')" value="글쓰기 완료">  
 			<input type="button" class="btn btn-danger btn-lg" action="list.jsp" value="글목록">   -->
