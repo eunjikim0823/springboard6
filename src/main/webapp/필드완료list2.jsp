@@ -10,35 +10,62 @@
 <!--  ======================= -->
 	<nav id="Contents_Board"> 
 	
-		<form action = "" method="get" >
-			
-			<select name="type" class="type">
-		  		<option selected value hidden class="type">조회기준</option>
-		  		<option value="최신순" class="최신순">최신순</option>
-		  		<option value="인기순" class="인기순">인기순</option>	
-		  	</select>	
-		 
-		 	<input type="submit" class="btn btn-danger"  value="적용">   
-			  	
-		</form>	
-			
-			  <a href="write.jsp" class="btn btn-danger" role="button">글작성</a>
+		<div class="container">				
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+				<!-- 드롭다운 부분 추가 -->
+					<li class="dropdown">
+						<a data-toggle="dropdown" href="#">조회기준
+							<span class="caret"></span></a>	
+						<ul class="dropdown-menu">					
+							<li><a href="#">인기순</a></li>
+							<li><a href="#">최신순</a></li>			
+						</ul>
+					</li>
+				<!-- 드롭다운 부분 추가 2 -->	
+					<li class="dropdown">
+						<a data-toggle="dropdown" href="#">주거형태
+							<span class="caret"></span></a>	
+						<ul class="dropdown-menu">					
+							<li><a href="#">아파트</a></li>
+							<li><a href="#">빌라&연립</a></li>
+							<li><a href="#">오피스텔</a></li>
+							<li><a href="#">주택</a></li>				
+						</ul>
+					</li>		
+				<!-- 드롭다운 부분 추가3 -->	
+					<li class="dropdown">
+						<a data-toggle="dropdown" href="#">평수
+							<span class="caret"></span></a>	
+						<ul class="dropdown-menu">					
+							<li><a href="#">10평미만</a></li>
+							<li><a href="#">10평대</a></li>
+							<li><a href="#">20평대</a></li>		
+							<li><a href="#">30평대</a></li>	
+						</ul>
+					</li>		
+			   <!-- 드롭다운 부분 추가 4 -->	
+					<li class="dropdown">
+						<a data-toggle="dropdown" href="#">거주형태
+							<span class="caret"></span></a>	
+						<ul class="dropdown-menu">					
+							<li><a href="#">싱글라이프</a></li>
+							<li><a href="#">신혼부부</a></li>
+							<li><a href="#">아이가 있는 집</a></li>		
+							<li><a href="#">부모님과 함께 사는 집</a></li>	
+						</ul>
+					</li>			
+				</ul>
 				
-			<form action="search.do">
-		   		<select name="searchName" size="1">
-	          		<option value="author">작성자</option>
-    	      		<option value="title">제목</option>
-           		</select>
-		   		<input type="text" name="searchValue">
-		  	 	<input type="submit" value="검색">
-			</form>	 
-		
-		</nav>
+			<div class="text-center">
+			  <a href="write.jsp" class="btn btn-danger icon3" role="button">글작성</a>
+			</div>	
 			
+		</nav>	
 		<hr/>
 		
 			<%
-				ArrayList list = (ArrayList) request.getAttribute("list");//${list}
+				ArrayList list = (ArrayList) request.getAttribute("list2");//${list}
 				if (list != null) {//데이터가 존재한다면
 					Iterator iter = list.iterator();
 					while (iter.hasNext()) {//꺼낼 데이터가 존재한다면

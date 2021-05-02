@@ -9,32 +9,100 @@
 
 <!--  ======================= -->
 	<nav id="Contents_Board"> 
-	
-		<form action = "" method="get" >
-			
-			<select name="type" class="type">
-		  		<option selected value hidden class="type">조회기준</option>
-		  		<option value="최신순" class="최신순">최신순</option>
-		  		<option value="인기순" class="인기순">인기순</option>	
-		  	</select>	
-		 
-		 	<input type="submit" class="btn btn-danger"  value="적용">   
-			  	
-		</form>	
-			
-			  <a href="write.jsp" class="btn btn-danger" role="button">글작성</a>
+
+<!-- 	
+		<div class="container">				
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+				드롭다운 부분 추가
+					<li class="dropdown">
+						<a data-toggle="dropdown">조회기준
+							<span class="caret"></span></a>	
+						<ul class="dropdown-menu">					
+							<li name="searchNum">인기순</a></li>
+							<li><a href="#">최신순</a></li>			
+						</ul>
+					</li>
+				드롭다운 부분 추가 2	
+					<li class="dropdown">
+						<a data-toggle="dropdown" href="#">주거형태
+							<span class="caret"></span></a>	
+						<ul class="dropdown-menu">					
+							<li><a href="#">아파트</a></li>
+							<li><a href="#">빌라&연립</a></li>
+							<li><a href="#">오피스텔</a></li>
+							<li><a href="#">주택</a></li>				
+						</ul>
+					</li>		
+				드롭다운 부분 추가3	
+					<li class="dropdown">
+						<a data-toggle="dropdown" href="#">평수
+							<span class="caret"></span></a>	
+						<ul class="dropdown-menu">					
+							<li><a href="#">10평미만</a></li>
+							<li><a href="#">10평대</a></li>
+							<li><a href="#">20평대</a></li>		
+							<li><a href="#">30평대</a></li>	
+						</ul>
+					</li>		
+			   드롭다운 부분 추가 4	
+					<li class="dropdown">
+						<a data-toggle="dropdown" href="#">거주형태
+							<span class="caret"></span></a>	
+						<ul class="dropdown-menu">					
+							<li><a href="#">싱글라이프</a></li>
+							<li><a href="#">신혼부부</a></li>
+							<li><a href="#">아이가 있는 집</a></li>		
+							<li><a href="#">부모님과 함께 사는 집</a></li>	
+						</ul>
+					</li>			
+				</ul> -->
 				
-			<form action="search.do">
-		   		<select name="searchName" size="1">
-	          		<option value="author">작성자</option>
-    	      		<option value="title">제목</option>
-           		</select>
-		   		<input type="text" name="searchValue">
-		  	 	<input type="submit" value="검색">
-			</form>	 
+		<!-- 거주상황 표기 -->
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<form action="search.do" method="get">
+				  
+				  		<select name="searchNum" class="searchNum">
+					  		<option selected value hidden class="searchNum">조회기준</option>
+					  		<option value="인기순" class="인기순">인기순</option>
+					  		<option value="최신순" class="최신순">최신순</option>
+				  		</select>
+				  	
+					  	<select name="searchType" class="searchType">
+					  		<option selected value hidden class="searchType">주거형태</option>
+					  		<option value="아파트" class="아파트">아파트</option>
+					  		<option value="빌라&연립" class="빌라&연립">빌라&연립</option>
+					  		<option value="오피스텔" class="오피스텔">오피스텔</option>
+					  		<option value="주택" class="주택">주택</option>
+					  	</select>
+					  	
+					  	<select name="searchHsize" class="searchHsize">
+					  		<option selected value hidden class="searchHsize">평수</option>
+					  		<option value="10평 이하" class="10평 이하">10평 이하</option>
+					  		<option value="10평" class="10평">10평</option>
+					  		<option value="20평" class="20평">20평</option>
+					  		<option value="30평" class="">30평</option>
+					  	</select>
+					  	
+					  	<select name="searchMate" class="searchMate">
+					  		<option selected value hidden class="searchMate">거주형태</option>
+					  		<option value="싱글라이프" class="싱글라이프">싱글라이프</option>
+					  		<option value="신혼부부" class="신혼부부">신혼부부</option>
+					  		<option value="아이가 있는 집" class="아이가 있는 집">아이가 있는 집</option>
+					  		<option value="부모님과 함께 사는 집" class="부모님과 함께 사는 집">부모님과 함께 사는 집</option>
+					  	</select>  
+					
+					<input type="submit" class="btn btn-danger icon3" value="적용">  	
+					 
+					</form>			
+					
+					 <a href="write.jsp" class="btn btn-danger icon3" role="button">글작성</a>
+				
+				</div>	
+			</div>		
+		</nav>	
 		
-		</nav>
-			
 		<hr/>
 		
 			<%
@@ -327,7 +395,7 @@
 				</div>
 			</nav>
 
-				
+
 	
 	
 <%@include file ="footer.jsp" %>
