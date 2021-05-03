@@ -26,5 +26,9 @@
 .style_tag  {text-align: center; color:red; }	
 
 
-/* 게시물 글쓰기 여백 */
+/* 게시물 글쓰기 */
 .contents_write > form {margin-top:10px;}
+
+.watch_livingtype {
+		  font-size:40px; color:red;}
+		  
