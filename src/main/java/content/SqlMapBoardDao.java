@@ -49,6 +49,14 @@ public class SqlMapBoardDao extends SqlSessionDaoSupport implements BoardDAO {
 		return (BoardCommand)getSqlSession().selectOne("retrieve",num);
 	}
 	
+	@Override
+	public BoardCommand watch(String num) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return (BoardCommand)getSqlSession().selectOne("watch",num);
+	}
+	
+	
+	
 	//수정하기
 	@Override
 	public void update(BoardCommand data) throws DataAccessException {
@@ -90,5 +98,7 @@ public class SqlMapBoardDao extends SqlSessionDaoSupport implements BoardDAO {
 		
 		return (Integer)getSqlSession().selectOne("getBoardTotalCnt");
 	}
+
+
 
 }

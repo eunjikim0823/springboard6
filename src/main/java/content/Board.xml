@@ -27,6 +27,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
      update springboard set readcnt=readcnt+1 where num=#{num} 
  </update>
  
+  <!--5.게시물번호에 해당하는 레코드 한개 얻어오기  -->
+ <select id="watch" parameterType="String" resultType="board">
+      select * from springboard where num=#{num}
+ </select>
+ 
+ 
  <!--5.게시물번호에 해당하는 레코드 한개 얻어오기  -->
  <select id="retrieve" parameterType="String" resultType="board">
       select * from springboard where num=#{num}

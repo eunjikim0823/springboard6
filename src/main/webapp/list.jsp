@@ -100,7 +100,8 @@
 								&nbsp; &nbsp;&nbsp;&nbsp;
 						    	작성날짜:<%=writeday.substring(0, 10)%>
 						      
-						      <a href="retrieve.do?num=<%=num%>">
+						<%--       <a href="retrieve.do?num=<%=num%>"> --%>
+						      <a href="watch.do?num=<%=num%>">     
 						           
 						            <div class="thumbnail">
 						              <img src="picture/인기게시물/이미지3.jpg" alt="1" class="img-rounded img-responsive">

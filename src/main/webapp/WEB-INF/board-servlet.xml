@@ -65,6 +65,8 @@
         <ref bean="boardDAO" />
     </property>
  </bean>  -->
+ 
+  <bean name="/watch.do" class="content.WatchActionController" />
  <bean name="/retrieve.do" class="content.RetrieveActionController" />
 
 <!-- 5.글수정하기 -->

@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 //public class ListAction implements CommandAction {
 //페이지 이동,클래스는 틀리지만 요청해서 처리해주는 메서드 기능은 동일
 @Controller
-public class RetrieveActionController2{
+public class WatchActionController{
 
 	BoardDAO dao;//BoardDAO dao=new BoardDAO();
 	
@@ -25,19 +25,19 @@ public class RetrieveActionController2{
 		System.out.println("setDao()호출됨(dao)=>"+dao);
 	}
     // retrieve.do?num=4 =>get방식
-	@RequestMapping("/retrieve.do")
+	@RequestMapping("/watch.do")
 	public ModelAndView handleRequest(HttpServletRequest request, 
 			                                                  HttpServletResponse response) throws Exception {
 		
-		System.out.println("RetrieveActionController의 handleRequest()호출됨");
+		System.out.println("WatchActionController의 handleRequest()호출됨");
 		// TODO Auto-generated method stub
 		String num=request.getParameter("num");
 		//Board data=dao.retrieve(num);
 	    //추가
 		dao.updateReadcnt(num);//readcnt=readcnt+1
-		BoardCommand data=dao.retrieve(num);
+		BoardCommand data=dao.watch(num);
 		//--------------------------------------------
-		ModelAndView mav=new ModelAndView("retrieve");
+		ModelAndView mav=new ModelAndView("watch");
 		mav.addObject("data",data);//request.setAttribute("list",list);
 		//${data(키명)}
 		return mav;//return "/list.jsp"; //viewResolver가 알려줌
