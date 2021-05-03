@@ -8,7 +8,7 @@
 	<!-- 글쓰기  ------------------------------------------------------------------------------->
 	<div class="contents_write col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
 		
-		<form action = "write.do" method="post" >
+		<form action = "write.do" method="post"  enctype="multipart/form-data" >
 					 <!-- enctype="multipart/form-data" -->
 			
 			<div class="form-group">
