@@ -22,7 +22,7 @@ public class RetrieveActionController{
 	@Autowired
 	public void setDao(BoardDAO dao) { //<property name="dao"></property>
 		this.dao = dao;
-		System.out.println("setDao()호출됨(dao)=>"+dao);
+		System.out.println("RetrieveActionController의 setDao()호출됨(dao)=>"+dao);
 	}
     // retrieve.do?num=4 =>get방식
 	@RequestMapping("/retrieve.do")
@@ -34,7 +34,7 @@ public class RetrieveActionController{
 		String num=request.getParameter("num");
 		//Board data=dao.retrieve(num);
 	    //추가
-		dao.updateReadcnt(num);//readcnt=readcnt+1
+		//dao.updateReadcnt(num);//게시물 조회해서 +1 되니까 수정에서는 제외
 		BoardCommand data=dao.retrieve(num);
 		//--------------------------------------------
 		ModelAndView mav=new ModelAndView("retrieve");

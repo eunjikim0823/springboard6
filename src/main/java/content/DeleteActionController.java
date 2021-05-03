@@ -21,7 +21,7 @@ public class DeleteActionController {
 	
 	public void setDao(BoardDAO dao) { //<property name="dao"></property>
 		this.dao = dao;
-		System.out.println("setDao()호출됨(dao)=>"+dao);
+		System.out.println("DeleteActionController의 setDao()호출됨(dao)=>"+dao);
 	}
     // delete.do?num=4 =>get방식
 	@RequestMapping("/delete.do")

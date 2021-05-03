@@ -29,6 +29,6 @@
 /* 게시물 글쓰기 */
 .contents_write > form {margin-top:10px;}
 
-.watch_livingtype {
-		  font-size:40px; color:red;}
+.watch_livingtype {font-family: 'Hi Melody', cursive;	
+							  font-size:10px; color:red;}
 		  

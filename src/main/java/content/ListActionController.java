@@ -54,7 +54,7 @@ public class ListActionController {
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("list");//이동할 파일명만
 		mav.addObject("list",list);//request.setAttribute("list",list);
-		mav.addObject("list2", list2);
+		/* mav.addObject("list2", list2); */
 		mav.addObject("pagination", pagination);
 		//${list(키명)}
 		return mav;//return "/list.jsp"; //viewResolver가 알려줌

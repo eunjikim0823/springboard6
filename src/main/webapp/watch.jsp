@@ -24,28 +24,29 @@
 		
 			  	<div class="form-group">
 		
-			  		<label for="num"><h2>글번호</h2></label>
-				    <input type="text" class="form-control" name ="num" value="<%= num %>"readonly="readonly"/>
-		
-				    <label for="author"><h2>작성자</h2></label>
+			  		<%-- <label for="num"><h2>글번호</h2></label>
+				    <input type="text" class="form-control" name ="num" value="<%= num %>"readonly="readonly"/> --%>
+				    <label for="author"><h4>작성자</h4></label>
 				    <input type="text" class="form-control" name="author" value="<%= author %>">
 		
-				    <label for="title"><h2>제목</h2></label>
+				    <label for="title"><h4>제목</h4></label>
 				    <input type="text" class="form-control" name ="title" value="<%= title %>">
 		
 			  	</div><!-- 제목 그룹 --><p>
 			  	
 				<!-- 거주상황 표기 -->
 			  	<div class="watch_livingtype">
-			  	 	<%= type %> <%= hsize %> <%= mate %>
+			  	 	[<%= type %>]&nbsp; &nbsp;&nbsp;&nbsp; 
+			  	 	[<%= hsize %>]&nbsp; &nbsp;&nbsp;&nbsp;
+			  	 	[<%= mate %>]
 			  	</div><p>
 			  	
 			  	<div class="watch_content">
-			  		<label for="content"><h1>내용</h1></label><p>
+			  		<label for="content"><h3>내용</h3></label><p>
 					<%= content %><p>
 				</div>	
 				
-				<a href="retrieve.do?num=<%= num %>" type="button" class="btn btn-danger btn-lg text-right">글수정하기</a>
+				<a href="retrieve.do?num=<%= num %>" type="button" class="btn btn-danger btn-sm text-right">글수정하기</a>
 	
 			</form>	    	
     	</div><!--contents_write  ---------------------------------------------------------------------------------------------------------->
