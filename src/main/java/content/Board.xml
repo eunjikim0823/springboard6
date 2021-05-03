@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
      select max(num) from springboard
  </select>
  
- <!-- 3.글쓰기 (lee.BoardCommand) #{매개변수명(=멤버변수명)}-->
+ <!-- 3.글쓰기 (content.BoardCommand) #{매개변수명(=멤버변수명)}-->
  <insert id="write" parameterType="board">
      insert into springboard(num,author,title,content,writeday,hsize,mate,type)
      values(#{num},#{author},#{title},#{content},sysdate,#{hsize},#{mate},#{type})

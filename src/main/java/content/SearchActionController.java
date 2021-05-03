@@ -35,20 +35,12 @@ public class SearchActionController {
 		String searchName=request.getParameter("searchName");//검색분야
 		String searchValue=request.getParameter("searchValue");//검색어
 	
-		// String searchType=request.getParameter("searchType");//주거형태 
-		// String searchHsize=request.getParameter("searchHsize");//평수 
-		// String searchMate=request.getParameter("searchMate");//거주형태
-		 		//----------------------------------------------------------
-		//ArrayList list=dao.search(searchName,searchValue); before
+		
 		//--------------after------------------------------------------
 		BoardCommand data=new BoardCommand();
 		data.setSearchName(searchName);//검색분야
 		data.setSearchValue(searchValue);//검색어
 		
-		//  data.setSearchType(searchType);//주거형태 
-		//  data.setSearchHsize(searchHsize);//평수
-		//  data.setSearchMate(searchMate);//거주형태
-		  
 		List list=dao.search(data);//data.getSearchName()=>#{searchName}
 		                                         //data.getSearchValue()=>#{searchName}
 		//-----------------------------------------------------------
