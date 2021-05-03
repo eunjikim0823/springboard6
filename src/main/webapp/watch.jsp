@@ -15,6 +15,7 @@
   String hsize = data.getHsize();
   String mate = data.getMate();
   String type = data.getType();
+  String writeday = data.getWriteday();
 %>
 
 
@@ -22,17 +23,18 @@
 	<div class="row">
 		<div class="contents_write col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
 		
-			  	<div class="form-group">
-		
-			  		<%-- <label for="num"><h2>글번호</h2></label>
-				    <input type="text" class="form-control" name ="num" value="<%= num %>"readonly="readonly"/> --%>
-				    <label for="author"><h4>작성자</h4></label>
-				    <input type="text" class="form-control" name="author" value="<%= author %>">
-		
-				    <label for="title"><h4>제목</h4></label>
-				    <input type="text" class="form-control" name ="title" value="<%= title %>">
-		
-			  	</div><!-- 제목 그룹 --><p>
+			  	<div class="watch_form-group">
+					<div class="watch_writedaty">
+			  		<%=writeday.substring(0, 10)%>
+			  		</div>
+			  		<div class="watch_author">
+			  		<%= author %>
+			  		</div>
+					<p>
+					<div class="watch_title">
+					<b><%= title %>
+					</div>
+			  	</div><p>
 			  	
 				<!-- 거주상황 표기 -->
 			  	<div class="watch_livingtype">
@@ -42,8 +44,8 @@
 			  	</div><p>
 			  	
 			  	<div class="watch_content">
-			  		<label for="content"><h3>내용</h3></label><p>
-					<%= content %><p>
+			  		<label for="content"><p><%= content %></label><p>
+					<p>
 				</div>	
 				
 				<a href="retrieve.do?num=<%= num %>" type="button" class="btn btn-danger btn-sm text-right">글수정하기</a>

@@ -26,9 +26,18 @@
 .style_tag  {text-align: center; color:red; }	
 
 
-/* 게시물 글쓰기 */
+/* 컨텐츠 상세보기 */
 .contents_write > form {margin-top:10px;}
 
 .watch_livingtype {font-family: 'Hi Melody', cursive;	
-							  font-size:10px; color:red;}
+							  font-size:22px; color:red;}
 		  
+.watch_form-group  {font-family: 'Hi Melody', cursive;}
+
+.watch_writedaty {font-size:18px; color:gray;}
+
+.watch_author {font-size:23px; color:gray; font-weight:3px;}
+
+.watch_title {font-size:30px;}
+
+.watch_content {font-family: 'Hi Melody', cursive;	 font-size:22px;}
