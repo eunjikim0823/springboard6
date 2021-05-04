@@ -93,7 +93,7 @@
     
     
     
- 	<!-- 글쓰기 양식 관련 스크립트/링크 ------------------------------------------------------------------------------------------------------->
+ <!-- 글쓰기 양식 관련 스크립트/링크 ------------------------------------------------------------------------------------------------------->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
@@ -103,14 +103,45 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 		
-	<script src="/resources/js/summernote-ko-KR.js"></script>
-	
+  <!-- 서머노트를 위해 추가해야할 부분 -->
+  <script src="${pageContext.request.contextPath}/resources/summernote/summernote-lite.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/summernote/lang/summernote-ko-KR.js"></script>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/summernote/summernote-lite.css">
+  <!--  -->
 	<!-- 글쓰기 양식 폼 관련 스크립트  -->	
- 	<script>
-      $('.summernote').summernote({
-        tabsize: 2,
-        height: 400
-      });
-    </script>	
+ 	<script type="text/javascript">
+        /* summernote에서 이미지 업로드시 실행할 함수 */
+	 	function sendFile(file, editor) {
+            // 파일 전송을 위한 폼생성
+	 		data = new FormData();
+	 	    data.append("uploadFile", file);
+	 	    $.ajax({ // ajax를 통해 파일 업로드 처리
+	 	        data : data,
+	 	        type : "POST",
+	 	        url : "./summernote_imageUpload.jsp",
+	 	        cache : false,
+	 	        contentType : false,
+	 	        processData : false,
+	 	        success : function(data) { // 처리가 성공할 경우
+                    // 에디터에 이미지 출력
+	 	        	$(editor).summernote('editor.insertImage', data.url);
+	 	        }
+	 	    });
+	 	}
+	</script>
+	 <script>
+            $(document).ready(function() {
+                $('.summernote').summernote({ // summernote를 사용하기 위한 선언
+                    tablesize:2,
+                	height: 400,
+					callbacks: { // 콜백을 사용
+                        // 이미지를 업로드할 경우 이벤트를 발생
+					    onImageUpload: function(files, editor, welEditable) {
+						    sendFile(files[0], this);
+						}
+					}
+				});
+			});
+		</script>
 	
 <%@include file ="footer.jsp" %>

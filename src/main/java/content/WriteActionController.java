@@ -43,7 +43,7 @@ public class WriteActionController {
 	     request객체 ->post방식으로 요청시 처리(@PostMapping("요청경로"))
 	     @RequestParam("num") String num
 	*/
-	
+	/*
 	@RequestMapping(value="/uploadSummernoteImageFile", produces = "application/json; charset=utf8")
 	public String uploadSummernoteImageFile(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request )  {
 		JsonObject jsonObject = new JsonObject();
@@ -53,7 +53,7 @@ public class WriteActionController {
 		 */
 		
 		// 내부경로로 저장
-		String contextRoot = new HttpServletRequestWrapper(request).getRealPath("/");
+	/*	String contextRoot = new HttpServletRequestWrapper(request).getRealPath("/");
 		String fileRoot = contextRoot+"resources/fileupload/";
 		
 		String originalFileName = multipartFile.getOriginalFilename();	//오리지날 파일명
@@ -75,7 +75,7 @@ public class WriteActionController {
 		String a = jsonObject.toString();
 		return a;
 	}
-	
+	*/
 	@RequestMapping("/write.do")
 	protected ModelAndView test(@RequestParam("title") String title,
 			                                       @RequestParam("author") String author,
