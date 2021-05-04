@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="content.*" %>   
 <%@include file ="header.jsp" %>
+
     <!-- css 파일   -->
     <link href="css/Contents.css" rel="stylesheet"  type="text/css">
 
