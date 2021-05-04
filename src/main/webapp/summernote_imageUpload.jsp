@@ -6,7 +6,7 @@
 <%
     // 이미지 업로드할 경로
 	String uploadPath = "C:/Class/webtest/4.jsp/sou2/boardspring6/src/main/resource/upload";
-    int size = 10 * 1024 * 1024;  // 업로드 사이즈 제한 10M 이하
+    int size = 1024 * 1024 * 1024;  // 업로드 사이즈 제한 10M 이하
 	
     System.out.println("1.파일 지정경로에 저장");
     
@@ -41,5 +41,3 @@
 	response.setContentType("application/json"); // 데이터 타입을 json으로 설정하기 위한 세팅
 	out.print(jobj.toJSONString());
 	%>
-	
-	
