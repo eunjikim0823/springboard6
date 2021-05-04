@@ -15,14 +15,15 @@
 			
 			    <label for="author"><h2>작성자</h2></label>
 			    <input type="text" class="form-control" name="author">
-			
+				<p>
 			    <label for="title"><h2>제목</h2></label>
 			    <input type="text" class="form-control" placeholder="제목을 입력해주세요" name ="title">
-		  	
+		  		<p>
 		  	</div><!-- 제목 그룹 -->
-		  
+		  	
 			<!-- 거주상황 표기 -->
 		  	<div class="livingtype">
+		  	
 			  	<select name="type" class="type">
 			  		<option selected value hidden class="type">주거형태</option>
 			  		<option value="아파트" class="아파트">아파트</option>
@@ -47,9 +48,9 @@
 			  		<option value="부모님과 함께 사는 집" class="부모님과 함께 사는 집">부모님과 함께 사는 집</option>
 			  	</select> 
 		  	</div>
-
+			<p>
 		  	<div class="form-group">
-		  	
+		  	<p>
 		  		<label for="content"><h1>내용</h1></label>
 		  		<textarea class="form-control summernote" rows="10" name="content" placeholder="홈꾸와 멋진 집을 공유해주세요"></textarea>
 		  	

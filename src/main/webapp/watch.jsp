@@ -21,8 +21,8 @@
 
 	<!-- 글 상세보기 및 수정----------------------------------------------------------->
 	<div class="row">
-		<div class="contents_write col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-2">
-		
+		<div class="contents_write col-md-11 col-md-offset-1 col-sm-11 col-sm-offset-1">
+
 			  	<div class="watch_form-group">
 					<div class="watch_writedaty">
 			  		<%=writeday.substring(0, 10)%>
@@ -48,7 +48,7 @@
 					<p>
 				</div>	
 				
-				<a href="retrieve.do?num=<%= num %>" type="button" class="btn btn-danger btn-sm text-right">글수정하기</a>
+				<a href="retrieve.do?num=<%= num %>" type="button" class="btn btn-danger btn-sm text-center">글수정하기</a>
 	
 			</form>	    	
     	</div><!--contents_write  ---------------------------------------------------------------------------------------------------------->
