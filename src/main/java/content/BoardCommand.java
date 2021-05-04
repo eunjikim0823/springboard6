@@ -15,8 +15,15 @@ public class BoardCommand {
 	
 	String hsize,mate,type;
 	
-
-
+	/*
+	 * String uploadPath;
+	 * 
+	 * public String getUploadPath() { return uploadPath; }
+	 * 
+	 * public void setUploadPath(String uploadPath) { this.uploadPath = uploadPath;
+	 * }
+	 */
+	
 	//DTO와 상관이없지만 MyBatis검색때문에 필요한 클래스때문에 추가
 	String searchName;//검색분야
 	String searchValue;//검색어

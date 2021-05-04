@@ -13,7 +13,16 @@ public class Board { //BoardDTO,BoardVO
 
 	private String hsize,mate,type;
 	
-	
+
+	/*
+	 * private String uploadPath;
+	 * 
+	 * public String getUploadPath() { return uploadPath; }
+	 * 
+	 * public void setUploadPath(String uploadPath) { this.uploadPath = uploadPath;
+	 * }
+	 */
+
 	public String getHsize() {
 		return hsize;
 	}
