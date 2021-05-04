@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file ="header.jsp" %>
+
     <!-- css 파일   -->
     <link href="css/Contents.css" rel="stylesheet">
 
@@ -8,21 +9,21 @@
 	<!-- 글쓰기  ------------------------------------------------------------------------------->
 	<div class="contents_write col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
 		
-		<form action = "write.do" method="post" >
-					 <!-- enctype="multipart/form-data" -->
+		<form action = "write.do" method="post"  enctype="multipart/form-data" >
 			
 			<div class="form-group">
 			
 			    <label for="author"><h2>작성자</h2></label>
 			    <input type="text" class="form-control" name="author">
-			
+				<p>
 			    <label for="title"><h2>제목</h2></label>
 			    <input type="text" class="form-control" placeholder="제목을 입력해주세요" name ="title">
-		  	
+		  		<p>
 		  	</div><!-- 제목 그룹 -->
-		  
+		  	
 			<!-- 거주상황 표기 -->
 		  	<div class="livingtype">
+		  	
 			  	<select name="type" class="type">
 			  		<option selected value hidden class="type">주거형태</option>
 			  		<option value="아파트" class="아파트">아파트</option>
@@ -47,9 +48,9 @@
 			  		<option value="부모님과 함께 사는 집" class="부모님과 함께 사는 집">부모님과 함께 사는 집</option>
 			  	</select> 
 		  	</div>
-
+			<p>
 		  	<div class="form-group">
-		  	
+		  	<p>
 		  		<label for="content"><h1>내용</h1></label>
 		  		<textarea class="form-control summernote" rows="10" name="content" placeholder="홈꾸와 멋진 집을 공유해주세요"></textarea>
 		  	
@@ -84,20 +85,40 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 		
-  <!-- 서머노트를 위해 추가해야할 부분 -->
-  <script src="${pageContext.request.contextPath}/resources/summernote/summernote-lite.js"></script>
-  <script src="${pageContext.request.contextPath}/resources/summernote/lang/summernote-ko-KR.js"></script>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/summernote/summernote-lite.css">
-  <!--  -->
+ 
 	<!-- 글쓰기 양식 폼 관련 스크립트  -->	
- 	<script>
- 	  
-    $('.summernote').summernote({
-     tabsize: 2,
-     height: 400
-
- 	
-  });
-    </script>	
-	
+ 	<script type="text/javascript">
+        /* summernote에서 이미지 업로드시 실행할 함수 */
+	 	function sendFile(file, editor) {
+            // 파일 전송을 위한 폼생성
+	 		data = new FormData();
+	 	    data.append("file", file);
+	 	    $.ajax({ // ajax를 통해 파일 업로드 처리
+	 	        data : data,
+	 	        type : "POST",
+	 	        url : "./summernote_imageUpload.jsp",
+	 	        cache : false,
+	 	        contentType : false,
+	 	        processData : false,
+	 	        success : function(data) { // 처리가 성공할 경우
+                    // 에디터에 이미지 출력
+	 	        	$(editor).summernote('insertImage', data.url);
+	 	        }
+	 	    });
+	 	}
+	</script>
+	 <script>
+            $(document).ready(function() {
+                $('.summernote').summernote({ // summernote를 사용하기 위한 선언
+                    tablesize:2,
+                	height: 400,
+					callbacks: { // 콜백을 사용
+                        // 이미지를 업로드할 경우 이벤트를 발생
+					    onImageUpload: function(files, editor,welEditable) {
+						    sendFile(files[0], this);
+						}
+					}
+				});
+			});
+		</script>
 <%@include file ="footer.jsp" %>
