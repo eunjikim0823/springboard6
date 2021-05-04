@@ -1,4 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="org.json.simple.JSONObject"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="java.util.Enumeration"%>
@@ -30,21 +30,14 @@
     // 업로드된 경로와 파일명을 통해 이미지의 경로를 생성
 	uploadPath = "/upload/" + fileName;
 	
-	System.out.println("4.이미지의 경로를 생성"+uploadPath);
+	System.out.println("4.이미지의 경로를 생성");
 	
     // 생성된 경로를 JSON 형식으로 보내주기 위한 설정
-	JSONObject jsonoj = new JSONObject();
+	JSONObject jobj = new JSONObject();
+	jobj.put("url", uploadPath);
 	
-	 jsonoj .put("url", uploadPath);
-	
-	System.out.println("5.이미지의 경로 json으로 보냄"+jsonoj);
+	System.out.println("5.이미지의 경로 json으로 보냄");
 	
 	response.setContentType("application/json"); // 데이터 타입을 json으로 설정하기 위한 세팅
-
-	String a =  jsonoj.toJSONString();
-	
-	System.out.println("6.출력"+ a );
-	
-	//out.print(jobj.toJSONString());
+	out.print(jobj.toJSONString());
 	%>
- --%>
