@@ -1,11 +1,11 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="org.json.simple.JSONObject"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="java.util.Enumeration"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%
     // 이미지 업로드할 경로
-	String uploadPath = "C:/Class/webtest/4.jsp/sou2/boardspring6/src/main/resource/upload";
+	String uploadPath = "C:/Class";
     int size = 1024 * 1024 * 1024;  // 업로드 사이즈 제한 10M 이하
 	
     System.out.println("1.파일 지정경로에 저장");
@@ -47,4 +47,3 @@
 	
 	//out.print(jobj.toJSONString());
 	%>
- --%>

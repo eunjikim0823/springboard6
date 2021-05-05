@@ -1,26 +1,10 @@
 package content;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.UUID;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
-
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-import com.google.gson.JsonObject;
 
 //AbstractCommandController =>입력을 받아서 자동적으로 Setter Method 호출
 //public class WriteActionController extends AbstractCommandController {
@@ -76,6 +60,7 @@ public class WriteActionController {
 		return a;
 	}
 	*/
+	
 	@RequestMapping("/write.do")
 	protected ModelAndView test(@RequestParam("title") String title,
 			                                       @RequestParam("author") String author,
