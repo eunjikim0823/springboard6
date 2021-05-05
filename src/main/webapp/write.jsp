@@ -96,14 +96,16 @@
 	 	    $.ajax({ // ajax를 통해 파일 업로드 처리
 	 	        data : data,
 	 	        type : "POST",
-	 	        url : "./summernote_imageUpload.jsp",
+	 	        //url : "./summernote_imageUpload.jsp",
+	 	        url : "/FileManageController"
+	 	      
 	 	        enctype: 'multipart/form-data',
 	 	        cache : false,
 	 	        contentType : false,
 	 	        processData : false,
 	 	        success : function(data) { // 처리가 성공할 경우
                     // 에디터에 이미지 출력
-	 	        	$(editor).summernote('editor.insertImage', data.url);
+	 	        	$(editor).summernote('editor.insertImage', data);
 	 	        }
 	 	    });
 	 	}
