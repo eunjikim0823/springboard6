@@ -11,8 +11,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
     //로 접속하면 C:/summernote_image/1234.jpg 파일을 불러온다.
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/upload/**")
-                .addResourceLocations("file:///C:/Class/webtest/4.jsp/sou2/boardspring6/src/main/resource/upload/");
+        registry.addResourceHandler("/class/**")
+                .addResourceLocations("file:///C:/Class/");
    System.out.println("WebMvcConfig 출력");
     }
 }

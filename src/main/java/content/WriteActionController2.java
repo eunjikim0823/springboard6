@@ -21,7 +21,7 @@ import com.google.gson.JsonObject;
 //AbstractCommandController =>입력을 받아서 자동적으로 Setter Method 호출
 //public class WriteActionController extends AbstractCommandController {
 @Controller
-public class WriteActionController {
+public class WriteActionController2 {
       //setCommandClass(BoardCommand command)상속받아서 이미 가지고 있는 상태
 
 
@@ -78,4 +78,45 @@ public class WriteActionController {
 
 	}
 
+
+
+	/* public class MultipartController { */
+		@RequestMapping("/write.do")
+		public String uploadSummernoteImageFile(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request ) throws IOException  {
+
+
+			JsonObject jsonObject = new JsonObject();
+
+			String fileRoot = "C:\\class\\"; // 외부경로로 저장을 희망할때.
+
+			System.out.println("외부경로에 저장했는가?");
+			// 내부경로로 저장
+			//String contextRoot = new HttpServletRequestWrapper(request).getRealPath("/");
+			//String fileRoot = contextRoot+"resources/upload/";
+
+			String originalFileName = multipartFile.getOriginalFilename();	//오리지날 파일명
+			String extension = originalFileName.substring(originalFileName.lastIndexOf("."));	//파일 확장자
+			String savedFileName = UUID.randomUUID() + extension;	//저장될 파일 명
+
+			File targetFile = new File(fileRoot + savedFileName);
+
+			System.out.println("파일을 저장했는가?"+fileRoot);
+
+			try {
+				InputStream fileStream = multipartFile.getInputStream();
+				FileUtils.copyInputStreamToFile(fileStream, targetFile);	//파일 저장
+				jsonObject.addProperty("url", "C:\\class\\"+savedFileName); // contextroot + resources + 저장할 내부 폴더명
+				jsonObject.addProperty("responseCode", "success");
+
+			} catch (IOException e) {
+				FileUtils.deleteQuietly(targetFile);	//저장된 파일 삭제
+				jsonObject.addProperty("responseCode", "error");
+				e.printStackTrace();
+			}
+			String a = jsonObject.toString();
+
+			System.out.println("jsonObject을 a에 담다 " + a);
+
+			return a;
+		}
 }

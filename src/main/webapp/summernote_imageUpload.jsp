@@ -14,6 +14,7 @@
 
 	String fileName = ""; // 파일명
 
+
 	System.out.println("2.파일명 변경");
 
 	try{
@@ -30,22 +31,21 @@
 	System.out.println("3.파일 저장 후 가지고옴 ");
 
     // 업로드된 경로와 파일명을 통해 이미지의 경로를 생성
-	uploadPath = "/Class/" + fileName;
+	uploadPath = "/C:/Class/" + fileName;
 
 	System.out.println("4.이미지의 경로를 생성"+uploadPath);
 
     // 생성된 경로를 JSON 형식으로 보내주기 위한 설정
 	JSONObject jsonoj = new JSONObject();
-
-	 jsonoj .put("url", uploadPath);
+	 jsonoj.put("url",uploadPath);
 
 	System.out.println("5.이미지의 경로 json으로 보냄"+jsonoj);
 
-	response.setContentType("application/json"); // 데이터 타입을 json으로 설정하기 위한 세팅
+	response.setContentType("application/json");
+	out.print(jsonoj.toJSONString());
 
-	String a =  jsonoj.toJSONString();
 
-	System.out.println("6.출력"+ a );
+	System.out.println("6.출력"+ jsonoj.toJSONString());
 
 	//out.print(jobj.toJSONString());
-	%>
+%>

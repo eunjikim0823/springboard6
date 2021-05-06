@@ -11,14 +11,14 @@
 <!-- (4)viewResolver(위치(prefix),이동할 페이지의 확장자(suffix)  -->
 <bean id="viewResolver"
       class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-     <property name="viewClass" 
+     <property name="viewClass"
                    value="org.springframework.web.servlet.view.JstlView" />
      <property name="prefix" value="/" />
      <property name="suffix" value=".jsp"></property>
  </bean>
 
 <!--(2) 요청명령어에 따른 처리해주는 컨트롤러를 문의? -->
-<bean id="defaultHandlerMapping" 
+<bean id="defaultHandlerMapping"
          class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
 
 <!-- 요청명령어에 따른 컨트롤러 클래스를 작성(=모델2 액션클래스)
@@ -28,11 +28,11 @@
  <!-- 0.DB접속(JNDI) -->
 <!--  <bean id="boardDAO" class="lee.BoardDAO" /> -->
  <bean id="boardDAO" class="content.SqlMapBoardDao">
-     <property name="sqlSessionFactory" 
+     <property name="sqlSessionFactory"
                       ref="sqlSessionFactory" />
  </bean>
- 
- 
+
+
  <!-- 1.글목록보기 -->
  <!-- before
   <bean name="/list.do" class="lee.ListActionController">
@@ -40,15 +40,15 @@
         <ref bean="boardDAO" />
     </property>
  </bean> -->
- 
+
  <bean name="/list.do" class="content.ListActionController" />
- 
+
  <!-- 2.글쓰기 폼으로 이동 -->
- <bean name="/writeui.do" 
+ <bean name="/writeui.do"
    class="org.springframework.web.servlet.mvc.ParameterizableViewController">
       <property name="viewName" value="write" />
    </bean>
-            
+
  <!-- 3.글쓰기(글수정하기와 거의유사) -->
 <!--  <bean name="/write.do" class="lee.WriteActionController">
     <property name="dao">
@@ -56,7 +56,7 @@
     </property>
     <property name="commandClass" value="lee.BoardCommand" />
  </bean> -->
- 
+
  <bean name="/write.do" class="content.WriteActionController" />
 
 <!--4. 글상세보기 -->
@@ -65,7 +65,7 @@
         <ref bean="boardDAO" />
     </property>
  </bean>  -->
- 
+
   <bean name="/watch.do" class="content.WatchActionController" />
  <bean name="/retrieve.do" class="content.RetrieveActionController" />
 
@@ -77,7 +77,7 @@
     <property name="commandClass" value="lee.BoardCommand" />
  </bean> -->
  <bean name="/update.do" class="content.UpdateActionController" />
- 
+
  <!-- 6.글삭제하기 (목록보기랑 비슷)-->
  <!-- <bean name="/delete.do" class="lee.DeleteActionController">
     <property name="dao">
@@ -85,7 +85,7 @@
     </property>
  </bean>-->
   <bean name="/delete.do" class="content.DeleteActionController" />
-  
+
  <!--7.글검색하기  -->
   <!-- <bean name="/search.do" class="lee.SearchActionController">
     <property name="dao">
@@ -93,7 +93,7 @@
     </property>
  </bean> -->
  <bean name="/search.do" class="content.SearchActionController" />
- 
+
 <!-- <bean name="/hello.do"  class="lee.HelloActionController" />  -->
 
 

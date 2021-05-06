@@ -1,30 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file ="header.jsp" %>
-
     <!-- css 파일   -->
     <link href="css/Contents.css" rel="stylesheet">
-
 
 
 	<!-- 글쓰기  ------------------------------------------------------------------------------->
 	<div class="contents_write col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
 
-		<form action = "write.do" method="post"  enctype="multipart/form-data" >
+		<form action = "write.do" method="post" >
+					 <!-- enctype="multipart/form-data" -->
 
 			<div class="form-group">
 
 			    <label for="author"><h2>작성자</h2></label>
 			    <input type="text" class="form-control" name="author">
-				<p>
+
 			    <label for="title"><h2>제목</h2></label>
 			    <input type="text" class="form-control" placeholder="제목을 입력해주세요" name ="title">
-		  		<p>
+
 		  	</div><!-- 제목 그룹 -->
 
 			<!-- 거주상황 표기 -->
 		  	<div class="livingtype">
-
 			  	<select name="type" class="type">
 			  		<option selected value hidden class="type">주거형태</option>
 			  		<option value="아파트" class="아파트">아파트</option>
@@ -49,9 +47,9 @@
 			  		<option value="부모님과 함께 사는 집" class="부모님과 함께 사는 집">부모님과 함께 사는 집</option>
 			  	</select>
 		  	</div>
-			<p>
+
 		  	<div class="form-group">
-		  	<p>
+
 		  		<label for="content"><h1>내용</h1></label>
 		  		<textarea class="form-control summernote" rows="10" name="content" placeholder="홈꾸와 멋진 집을 공유해주세요"></textarea>
 
@@ -77,7 +75,7 @@
 
 
 	<!-- 글쓰기 양식 관련 스크립트/링크 ------------------------------------------------------------------------------------------------------->
-  <!--   <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -86,60 +84,20 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
+  <!-- 서머노트를 위해 추가해야할 부분 -->
+  <script src="${pageContext.request.contextPath}/resources/summernote/summernote-lite.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/summernote/lang/summernote-ko-KR.js"></script>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/summernote/summernote-lite.css">
+  <!--  -->
 	<!-- 글쓰기 양식 폼 관련 스크립트  -->
- 	<script type="text/javascript">
-        /* summernote에서 이미지 업로드시 실행할 함수 */
-	 	function sendFile(file, editor) {
+ 	<script>
 
-        	console.log("sendFile됨");
-
-        	// 파일 전송을 위한 폼생성
-	 		var data = new FormData();
-	 	    data.append("file", file);
-
-	 	    console.log("file처리됨"+file);
-		    console.log("data처리됨"+data);
-
-	 	    $.ajax({ // ajax를 통해 파일 업로드 처리
-	 	        data : data,
-	 	        type : "POST",
-	 	      	url : "./summernote_imageUpload.jsp",
-	 	        //url : "/picture/summer
-	 	        enctype: 'multipart/form-data',
-	 	        cache : false,
-	 	        contentType : false,
-	 	        processData : false,
-	 	        success : function(data) { // 처리가 성공할 경우
-                    // 에디터에 이미지 출력
-	 	        	$(editor).summernote('editor.insertImage', data);
-	 	        	console.log("editor.insertImage");
-	 	     	  },
-
-	 	  		    error:function(request,status,error){
-	 	  		       alert("code = "+ request.status + " message = " + request.responseText + " error = " + error); // 실패 시 처리
-	 	  		      },
-	 	    		  complete : function(data) {
-	 	   	               //  실패했어도 완료가 되었을 때 처리
-	 	         }
-	 	    });
-	 	}
-	</script>
-	 <script>
-
-	   $(document).ready(function() {
-           $('.summernote').summernote({ // summernote를 사용하기 위한 선언
-               tablesize:2,
-             	height: 400,
-				callbacks: { // 콜백을 사용
-                   // 이미지를 업로드할 경우 이벤트를 발생
-				    onImageUpload: function(files, editor,welEditable) {
-					    sendFile(files[0], this);
-						console.log("onImageUpload됨");
-					}
-				}
-			});
-		});
+    $('.summernote').summernote({
+     tabsize: 2,
+     height: 400
 
 
-		</script>
+  });
+    </script>
+
 <%@include file ="footer.jsp" %>
