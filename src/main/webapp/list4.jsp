@@ -14,13 +14,13 @@
 
 				<form action = "" method="get" >
 
-					<select name="type" class="type">
+					<select id="type" class="type">
 				  		<option selected value hidden class="type">조회기준</option>
 				  		<option value="최신순" class="최신순">최신순</option>
 				  		<option value="인기순" class="인기순">인기순</option>
 				  	</select>
 
-			  		<select name="searchType" class="searchType">
+			  		<select id="searchType" class="searchType">
 				  		<option selected value hidden class="searchType">주거형태</option>
 				  		<option value="아파트" class="아파트">아파트</option>
 				  		<option value="빌라&연립" class="빌라&연립">빌라&연립</option>
@@ -28,7 +28,7 @@
 				  		<option value="주택" class="주택">주택</option>
 				  	</select>
 
-				  	<select name="searchHsize" class="searchHsize">
+				  	<select id="searchHsize" class="searchHsize">
 				  		<option selected value hidden class="searchHsize">평수</option>
 				  		<option value="10평 이하" class="10평 이하">10평 이하</option>
 				  		<option value="10평" class="10평">10평</option>
@@ -36,7 +36,7 @@
 				  		<option value="30평" class="">30평</option>
 				  	</select>
 
-				  	<select name="searchMate" class="searchMate">
+				  	<select id="searchMate" class="searchMate">
 				  		<option selected value hidden class="searchMate">거주형태</option>
 				  		<option value="싱글라이프" class="싱글라이프">싱글라이프</option>
 				  		<option value="신혼부부" class="신혼부부">신혼부부</option>
@@ -44,8 +44,7 @@
 				  		<option value="부모님과 함께 사는 집" class="부모님과 함께 사는 집">부모님과 함께 사는 집</option>
 				  	</select>
 
-					<button type="button" onclick="getItem()">적용</button>
-				 	<!-- <input type="submit" class="btn btn-danger btn-sm"  value="적용"> -->
+				 	<input type="submit" class="btn btn-danger btn-sm"  value="적용">
 				</form>
 			</div><!--col-md-6 col-sm-6-->
 
@@ -134,10 +133,40 @@
 				} //end if
 				%>
 
+<select name="file_name">
+
+   <option value="bba">bba</option>
+
+   <option value="asdf">asdf</option>
+
+</select>
 
 <script>
-$("#serchType").html("<option value='아파트'>아파트</option><option value='빌라&연립'>빌라&연립</option><option value='오피스텔'>오피스텔</option><option value='주택'>주택</option>");
 
+$(document).ready(function(){ //-- 로딩시 호출
+
+
+
+	 // select box sort [2013.02.13]
+	 var sort = $("select[name='file_name']>option").sort(
+
+	                  function(a,b) {
+
+	                           return a.value.toLowerCase() > b.value.toLowerCase() ? 1 : -1; }
+
+	 );
+	 $("select[name='file_name']").empty();         // 기존데이터 지우고
+	 $("select[name='file_name']").append(sort); // 정렬된 데이터 넣어주고
+
+	 $("select[name='file_name']>option:first").attr("selected","selected"); // 처음껄로 selected
+	 //-end select box sort-
+
+
+	});
 
 </script>
+
+
+
+
 <%@include file ="footer.jsp" %>
