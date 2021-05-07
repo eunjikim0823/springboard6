@@ -361,8 +361,9 @@
 
 <script>
 	$(document).ready(function()){
-		$("#btn").click(function(){
-			$("#test").load();
+		$(".최신순").click(function(){
+			//$("#test").load();
+			alert("작동!");
 		});
 	};
 </script>
