@@ -86,11 +86,35 @@
 
 	<!-- 글쓰기 양식 폼 관련 스크립트  -->
 
-	<script>
-      $('.summernote').summernote({
-        tabsize: 2,
-        height: 400
-      });
-    </script>
+	 	<script>
+            $(document).ready(function() {
+                $('.summernote').summernote({ // summernote를 사용하기 위한 선언
+                    tablesize:2,
+                	height: 400,
+                	 callbacks: {	//이미지 첨부하는 부분
+                         onImageUpload : function(files) {
+                              uploadSummernoteImageFile(files[0],this);
+						    console.log('이미지 업로드')
+						}
+					}
+				});
+			});
+            function uploadSummernoteImageFile(file, editor) {
+                data = new FormData();
+                data.append("file", file);
+                console.log('file불러옴 = '+file)
+                $.ajax({
+                    data : data,
+                    type : "POST",
+                    url : "/uploadSummernoteImageFile",
+                    contentType : false,
+                    processData : false,
+                    success : function(data) {
+                        //항상 업로드된 파일의 url이 있어야 한다.
+                        $(editor).summernote('insertImage', data.url);
+                        console.log('insertImage 이미지 삽입 = ')
+                    }
+                });
+            }
 	</script>
 <%@include file ="footer.jsp" %>

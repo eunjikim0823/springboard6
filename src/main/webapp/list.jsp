@@ -8,18 +8,18 @@
 
 
 <!--  ======================= -->
-	<nav id="Contents_Board"> 
+	<nav id="Contents_Board">
 		<div class="row">
 			<div class="col-md-8 col-sm-8">
-		
+
 				<form action = "" method="get" >
-							
+
 					<select name="type" class="type">
 				  		<option selected value hidden class="type">조회기준</option>
 				  		<option value="최신순" class="최신순">최신순</option>
-				  		<option value="인기순" class="인기순">인기순</option>	
-				  	</select>	
-				  	
+				  		<option value="인기순" class="인기순">인기순</option>
+				  	</select>
+
 			  		<select name="searchType" class="searchType">
 				  		<option selected value hidden class="searchType">주거형태</option>
 				  		<option value="아파트" class="아파트">아파트</option>
@@ -27,7 +27,7 @@
 				  		<option value="오피스텔" class="오피스텔">오피스텔</option>
 				  		<option value="주택" class="주택">주택</option>
 				  	</select>
-				  	
+
 				  	<select name="searchHsize" class="searchHsize">
 				  		<option selected value hidden class="searchHsize">평수</option>
 				  		<option value="10평 이하" class="10평 이하">10평 이하</option>
@@ -35,40 +35,40 @@
 				  		<option value="20평" class="20평">20평</option>
 				  		<option value="30평" class="">30평</option>
 				  	</select>
-				  	
+
 				  	<select name="searchMate" class="searchMate">
 				  		<option selected value hidden class="searchMate">거주형태</option>
 				  		<option value="싱글라이프" class="싱글라이프">싱글라이프</option>
 				  		<option value="신혼부부" class="신혼부부">신혼부부</option>
 				  		<option value="아이가 있는 집" class="아이가 있는 집">아이가 있는 집</option>
 				  		<option value="부모님과 함께 사는 집" class="부모님과 함께 사는 집">부모님과 함께 사는 집</option>
-				  	</select>  
-			 
-				 	<input type="submit" class="btn btn-danger btn-sm"  value="적용">   
-				</form>	
-			</div><!--col-md-6 col-sm-6-->			
-			
-					
-			
-			<div class="col-md-4 col-sm-6 text-right">				
+				  	</select>
+
+				 	<input type="submit" class="btn btn-danger btn-sm"  value="적용">
+				</form>
+			</div><!--col-md-6 col-sm-6-->
+
+
+
+			<div class="col-md-4 col-sm-6 text-right">
 				<form action="search.do">
 			   		<select name="searchName" size="1">
 		          		<option value="author">작성자</option>
 		   	      		<option value="title">제목</option>
 		          		</select>
-         		
+
 			   		<input type="text" name="searchValue">
-			   		<input type="submit" value="검색"> 
-					
-				</form>	
-				
+			   		<input type="submit" value="검색">
+
+				</form>
+
 				 <a href="write.jsp" class="btn btn-danger icon3" role="button">글작성</a>
 			</div><!--col-md-6 col-sm-6-->
 		</div><!--row  -->
 	</nav>
-			
+
 		<hr/>
-		
+
 			<%
 				ArrayList list = (ArrayList) request.getAttribute("list");//${list}
 				if (list != null) {//데이터가 존재한다면
@@ -87,54 +87,54 @@
 						String writeday = data.getWriteday();
 						//------------------------------------------------
 						int readcnt = data.getReadcnt();//조회수
-			%>	
-					
-			<!-- https://ohou.se/projects/30967/detail	 -->		
-				
-				<!-- <div class="row"> -->	 
+			%>
+
+			<!-- https://ohou.se/projects/30967/detail	 -->
+
+				<!-- <div class="row"> -->
 						<div class="col-md-4 col-sm-4">
 						    <article class="content">
-						    
+
 						    	&nbsp; &nbsp;&nbsp;
 						    	조회수:<%=readcnt%>
 								&nbsp; &nbsp;&nbsp;&nbsp;
 						    	작성날짜:<%=writeday.substring(0, 10)%>
-						      
+
 						<%--       <a href="retrieve.do?num=<%=num%>"> --%>
-						      <a href="watch.do?num=<%=num%>">     
-						           
+						      <a href="watch.do?num=<%=num%>">
+
 						            <div class="thumbnail">
 						              <img src="picture/인기게시물/이미지3.jpg" alt="1" class="img-rounded img-responsive">
 						            <%-- 	<%=filename%> --%>
 						            </div><!-- content_img -->
-						           
+
 						            <div class="text">
 						              <%=title%>
-						            </div><!-- text -->  
-						       
-						       </a> 
-						             
+						            </div><!-- text -->
+
+						       </a>
+
 					            <div class="content_writer">
 					               <%=author%>
 					            </div><!-- content_writer -->
-						       					          
+
 						       <div class="style_tag">
 							       <hr>
 							      <%=hsize%> &nbsp;&nbsp; <%=mate%> &nbsp;&nbsp; <%=type%>
 							       <hr/>
-						       </div><!-- style_tag -->       
+						       </div><!-- style_tag -->
 						    </article><!-- content -->
-						</div><!-- class="col-md-4 col-sm-4" --> 
+						</div><!-- class="col-md-4 col-sm-4" -->
 
 				<!-- </div>	 -->
-				
+
 				<%
 				} //end while
 				} //end if
-				%>			
-				
-				
-<!-- 				<div class="row">	
+				%>
+
+
+<!-- 				<div class="row">
 					<div class="col-md-4 col-sm-4">
 					    <article class="content">
 					      <a href="#" >
@@ -143,23 +143,23 @@
 					            </div>content_img
 					            <div class="text">
 					              아날로그한 취향을 가진 마케터의 원룸 아지트
-					            </div>text  
-					       </a> 
-					             
+					            </div>text
+					       </a>
+
 				            <div class="content_writer">
-				                알로하윤     
+				                알로하윤
 				            </div>content_writer
-					       					          
+
 					       <div class="style_tag">
 						       <hr>
 						       	#원룸&오피스텔&nbsp;&nbsp;#14평&nbsp;&nbsp;#싱글라이프
-					       </div>style_tag       
+					       </div>style_tag
 					    </article>content
-					</div>class="col-md-4 col-sm-4" 
-					
-					
-					
-					
+					</div>class="col-md-4 col-sm-4"
+
+
+
+
 			https://ohou.se/projects/7871/detail?affect_type=ProjectSelfIndex&affect_id=13
 
  					<div class="col-md-4 col-sm-4">
@@ -170,20 +170,20 @@
 					            </div>content_img
 					            <div class="text">
 					               심플하면서도 취향이 드러나는 원룸의 매력
-					            </div>text  
+					            </div>text
 					      </a>
-					             
+
 				            <div class="content_writer">
-				                ki.iy      
+				                ki.iy
 				            </div>content_writer
-					       
+
 					       <div class="style_tag">
 						       <hr>
 						       	#원룸&오피스텔&nbsp;&nbsp;#6평&nbsp;&nbsp;#싱글라이프
-					       </div>style_tag              
+					       </div>style_tag
 					    </article>content
 					</div>class="col-md-4 col-sm-4"
-					 
+
                  https://ohou.se/projects/2971/detail?affect_type=ProjectSelfIndex&affect_id=15
 
  					<div class="col-md-4 col-sm-4">
@@ -194,24 +194,24 @@
 					            </div>content_img
 					            <div class="text">
 					              신랑과 내 취향을 모두 담아, 24평 신혼집
-					            </div>text  
-					       </a>       
-					             
+					            </div>text
+					       </a>
+
 			               <div class="content_writer">
-			                vivi90     
+			                vivi90
 			            	</div>content_writer
-					     
+
 					       <div class="style_tag">
 						       <hr>
 						       	#아파트&nbsp;&nbsp; #24평 &nbsp;&nbsp;#신혼부부
-					       </div>   style_tag           
+					       </div>   style_tag
 					    </article>content
-					</div>class="col-md-4 col-sm-4" 
+					</div>class="col-md-4 col-sm-4"
         		</div>
-        		
-        		
+
+
         		<div class="row">
-          		https://ohou.se/projects/3041/detail?affect_type=ProjectSelfIndex&affect_id=28                                 
+          		https://ohou.se/projects/3041/detail?affect_type=ProjectSelfIndex&affect_id=28
 					<div class="col-md-4 col-sm-4">
 					    <article class="content">
 					      <a href="#" >
@@ -220,23 +220,23 @@
 					            </div>content_img
 					            <div class="text">
 					            	 24년 된 18평 빌라, 천장을 뜯어봤어요!
-					            </div>text  
+					            </div>text
 					      </a>
-					              
+
 				          <div class="content_writer">
-				                회마야     
+				                회마야
 				          </div>content_writer
-				       
+
 				       	<div class="style_tag">
 						       <hr>
 						       	#빌라&연립&nbsp;&nbsp; #18평 &nbsp;&nbsp; # 신혼부부
-					    </div>style_tag              
+					    </div>style_tag
 					    </article>content
-					</div>class="col-md-4 col-sm-4" 
+					</div>class="col-md-4 col-sm-4"
 
-	
+
 			https://ohou.se/projects/45255/detail?affect_type=ProjectSelfIndex&affect_id=19
-					
+
 					<div class="col-md-4 col-sm-4">
 					    <article class="content">
 					      <a href="#" >
@@ -245,21 +245,21 @@
 					            </div>content_img
 					            <div class="text">
 					            	 제가 있는 이곳이 천국이네요
-					            </div>text  
+					            </div>text
 					      </a>
-					              
+
 				          <div class="content_writer">
-				                haeleezip      
+				                haeleezip
 				          </div>content_writer
-				       
+
 				       	<div class="style_tag">
 						       <hr>
 						       	#아파트&nbsp;&nbsp; # 홈스타일링 &nbsp;&nbsp;# 부모님과함께사는집
-					    </div>style_tag              
+					    </div>style_tag
 					    </article>content
-					</div>class="col-md-4 col-sm-4" 
+					</div>class="col-md-4 col-sm-4"
 
-					
+
 		https://ohou.se/projects/45173/detail?affect_type=ProjectSelfIndex&affect_id=25
 					<div class="col-md-4 col-sm-4">
 					    <article class="content">
@@ -269,24 +269,24 @@
 					            </div>content_img
 					            <div class="text">
 					            	 워라벨 찾기 스튜디오 겸	 생활 공간
-					            </div>text  
+					            </div>text
 					      </a>
-					              
+
 				          <div class="content_writer">
-				                그그_J      
+				                그그_J
 				          </div>content_writer
-				       
+
 				       	<div class="style_tag">
 						       <hr>
 						       	#아파트&nbsp;&nbsp; # 46평&nbsp;&nbsp; # 기타
-					    </div>style_tag              
+					    </div>style_tag
 					    </article>content
-					</div>class="col-md-4 col-sm-4" 
+					</div>class="col-md-4 col-sm-4"
 				</div>
 
 				<div class="row">
-				
-				https://ohou.se/projects/43029/detail?affect_type=ProjectSelfIndex&affect_id=2 
+
+				https://ohou.se/projects/43029/detail?affect_type=ProjectSelfIndex&affect_id=2
 					<div class="col-md-4 col-sm-4">
 					    <article class="content">
 					      <a href="#" >
@@ -295,19 +295,19 @@
 					            </div>content_img
 					            <div class="text">
 					            	 오래되고 낡은 연립주택의 변신, 분수를 모르는 집
-					            </div>text  
+					            </div>text
 					      </a>
-					              
+
 				          <div class="content_writer">
-				                Boonsoo_zero      
+				                Boonsoo_zero
 				          </div>content_writer
-				       
+
 				       	<div class="style_tag">
 						       <hr>
 						       	#빌라&연립 # 28평 # 기타
-					    </div>style_tag              
+					    </div>style_tag
 					    </article>content
-					</div>class="col-md-4 col-sm-4" 
+					</div>class="col-md-4 col-sm-4"
 
 
 				https://ohou.se/projects/44354/detail?affect_type=ProjectSelfIndex&affect_id=11
@@ -319,19 +319,19 @@
 					            </div>content_img
 					            <div class="text">
 					            	 집이란, 매일 보게 될 풍경을 선택하는 일
-					            </div>text  
+					            </div>text
 					      </a>
-					              
+
 				          <div class="content_writer">
-				                peche_peche777      
+				                peche_peche777
 				          </div>content_writer
-				       
+
 				       	<div class="style_tag">
 						       <hr>
 						       	#원룸&오피스텔 # 18평 # 싱글라이프
-					    </div>style_tag              
+					    </div>style_tag
 					    </article>content
-					</div>class="col-md-4 col-sm-4" 
+					</div>class="col-md-4 col-sm-4"
 
 
 				https://ohou.se/projects/44044/detail?affect_type=ProjectSelfIndex&affect_id=99
@@ -343,23 +343,29 @@
 					            </div>content_img
 					            <div class="text">
 					            	 자취만 13년! 디자이너가 꾸민 6평 나만의 세상
-					            </div>text  
+					            </div>text
 					      </a>
-					              
+
 				          <div class="content_writer">
-				               slow_luu      
+				               slow_luu
 				          </div>content_writer
-				       
+
 				       	<div class="style_tag">
 						       <hr>
 						       	#원룸&오피스텔 # 6평 # 싱글라이프
-					    </div>style_tag              
+					    </div>style_tag
 					    </article>content
-					</div>class="col-md-4 col-sm-4" 
+					</div>class="col-md-4 col-sm-4"
 				</div>
 			</nav> -->
 
-				
-	
-	
+<script>
+	$(document).ready(function()){
+		$("#btn").click(function(){
+			$("#test").load();
+		});
+	};
+</script>
+
+
 <%@include file ="footer.jsp" %>
