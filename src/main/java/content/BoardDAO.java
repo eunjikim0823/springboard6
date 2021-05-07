@@ -8,41 +8,46 @@ import java.util.*; //List,ArrayList ->글목록보기
 import  org.springframework.dao.DataAccessException;
 
 public interface BoardDAO{
-	
+
 	//1.글목록보기
 	public List list() throws DataAccessException;
-	
-	
+
+
 	//2-1.글쓰기 -게시물의 최댁값 구하기 ->int
 	public int getNewNum() throws DataAccessException;
-	
+
 	//2-2.글쓰기
 	public void write(BoardCommand data) throws DataAccessException;
-	
+
 	//3-1.글사셍보기-조회수 증가시키기-> update
 	public void updateReadcnt(String num) throws DataAccessException;
-	
+
 	//3-2.글 상세보기 -조회수가 증가된 레코드 데이터 담기
 	public BoardCommand retrieve(String num) throws DataAccessException;
 
 	//3-2.글 상세보기 -조회수가 증가된 레코드 데이터 담기
 	public BoardCommand watch(String num) throws DataAccessException;
-	
-	//4.글수정하기 
+
+	//4.글수정하기
 	public void update(BoardCommand data) throws DataAccessException;
-	
+
 	//5.글삭제하기
 	public void delete(String num) throws DataAccessException;
-	
+
 	//6.검색하기->(String searchName,String searchValue) =>HashMap처리방법
 	//                 따로클래스로 만들어서 불러오는 경우
 	public List search(BoardCommand data) throws DataAccessException;
-	
+
 	public List getBoardList() throws DataAccessException;
-	
+
 	public List getBoardList2(Pagination pagination) throws DataAccessException;
-	
+
 	public int getBoardTotalCnt() throws DataAccessException;
+
+	//카테고리
+	//인기순
+	public List getPopList() throws DataAccessException;
+
 }
 
 
@@ -74,9 +79,9 @@ import javax.sql.DataSource;
 public class BoardDAO{
 
 	DataSource ds;//DBConnectionMgr pool;와 기능이 같다(has a 관계)
-   	
+
    public BoardDAO(){
-		//생성자: DataSource 얻기 :  InitialContext  
+		//생성자: DataSource 얻기 :  InitialContext
 		try {
 			//InitialContext ctx=new InitialContext();도 가능
 			Context ctx=new InitialContext();
@@ -85,12 +90,12 @@ public class BoardDAO{
 		ds=(DataSource)ctx.lookup("java:comp/env/jdbc/orcl");
 		System.out.println("ds=>"+ds);
 		}catch(Exception e) {
-		    e.printStackTrace();	
+		    e.printStackTrace();
 		}
 	}
    //public List<Board> list() {
 	public ArrayList  list(){  //글목록보기
-		
+
 		ArrayList list = new ArrayList();
 		try{
 			String sql = "SELECT * FROM springboard ORDER BY num desc";
@@ -112,10 +117,10 @@ public class BoardDAO{
 			}//end while
 			rs.close();	stmt.close(); con.close();
 		}catch(Exception e){ e.printStackTrace(); }
-		
+
 		return  list;
 	}//end list
-	
+
 	public int getNewNum(){ //게시물번호 구하기
 		int newNum=1;//저장할 게시물번호 디폴트 설정값1
 		try {
@@ -129,7 +134,7 @@ public class BoardDAO{
 		}catch(Exception e) {e.printStackTrace();}
 		return newNum;
 	}//end getNewNum();
-	  
+
 	//public void write(Board board) {~
 	public void write(String author, String title , String content){
 		try{
@@ -138,7 +143,7 @@ public class BoardDAO{
 			String sql ="insert into springboard(num,author,title,content) values(";
 			sql +=  newNum + ",'" + author + "','" + title + "','" + content + "')";
 			System.out.println(sql);
-			
+
 	  	  	Connection con = ds.getConnection();
 	  	  	PreparedStatement stmt = con.prepareStatement(sql);
 	  	  	stmt.execute(sql);//stmt.executeUpdate(sql);
@@ -156,7 +161,7 @@ public class BoardDAO{
 		    PreparedStatement pstmt=con.prepareStatement(sql);
 		    int update=pstmt.executeUpdate(sql);
 		    System.out.println("조회수 증가유무(update)="+update);
-            pstmt=null;//전에 저장된 정보를 제거 
+            pstmt=null;//전에 저장된 정보를 제거
             //2.데이터찾기
             sql="select * from springboard where num="+num;
             pstmt=con.prepareStatement(sql);
@@ -170,10 +175,10 @@ public class BoardDAO{
             rs.close(); pstmt.close(); con.close();
 		}catch(Exception e) {e.printStackTrace();}
 		return data;
-	
+
 	}//end retrieve
     //public void update(Board board){
-	public void update( String num , String author, 
+	public void update( String num , String author,
 			            String title , String content){ // �� �����ϱ�
 	     try{
 		  String sql ="update springboard set title='" + title + "',";
@@ -183,7 +188,7 @@ public class BoardDAO{
 		  System.out.println(sql);//?을 써여된다.(보안때문에)
 
 		  Connection con = ds.getConnection();
-		  PreparedStatement stmt = con.prepareStatement(sql);  
+		  PreparedStatement stmt = con.prepareStatement(sql);
 		  int update=stmt.executeUpdate(sql);
 		  System.out.println("게시물수정유무(update)=>"+update);
 		  stmt.close();  con.close();
@@ -206,9 +211,9 @@ public class BoardDAO{
 		    ArrayList list = new ArrayList();
 		    try{
 		  	  String sql = "SELECT * FROM springboard";
-			  sql += " WHERE  " + name + " LIKE  '%" + value + "%' "; 
-			  System.out.println( sql );  //LIKE '%"홍길동"%'  
-		  
+			  sql += " WHERE  " + name + " LIKE  '%" + value + "%' ";
+			  System.out.println( sql );  //LIKE '%"홍길동"%'
+
 			      Connection con = ds.getConnection();
 		    	  PreparedStatement stmt = con.prepareStatement(sql);
 		    	  ResultSet rs = stmt.executeQuery( sql );
@@ -225,6 +230,6 @@ public class BoardDAO{
 		    	  rs.close();	stmt.close(); con.close();
 		    	}catch( Exception e){ e.printStackTrace();}
 		    	return list;
-    } 
+    }
 }
 */

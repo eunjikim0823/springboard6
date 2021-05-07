@@ -9,6 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
  <select id="list" resultType="board">
    select * from springboard order by num desc
+
  </select>
 
  <!-- 2.글쓰기(게시물 번호 최대값구하기) -->

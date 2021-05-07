@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 //어노테이션과 연관된 클래스.인터페이스 불러오게 되어있다.
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 //import org.springframework.web.servlet.mvc.Controller;
@@ -32,20 +34,20 @@ public class ListActionController {
 	// public void test() {}
 
 	@RequestMapping("/list.do")
-	public ModelAndView handleRequest(HttpServletRequest request, 
+	public ModelAndView handleRequest(HttpServletRequest request,
 			                                                  HttpServletResponse response) throws Exception {
 		System.out.println("ListActionController의 handleRequest()호출됨");
 
-		
-		
+
+
 		int currentPage = request.getParameter("currentPage") == null ? 1 : Integer.parseInt(request.getParameter("currentPage"));
 		int cntPerPage = request.getParameter("cntPerPage")  == null ? 12 : Integer.parseInt(request.getParameter("cntPerPage"));
 		int pageSize = request.getParameter("pageSize") == null ? 12 : Integer.parseInt(request.getParameter("pageSize"));
-		
+
 		int listCnt = dao.getBoardTotalCnt();
         Pagination pagination = new Pagination(currentPage, cntPerPage, pageSize);
         pagination.setTotalRecordCount(listCnt);
-        
+
 		//ArrayList list=dao.list();
 		List list=dao.list();
 		List list2=dao.getBoardList2(pagination);
@@ -59,4 +61,5 @@ public class ListActionController {
 		//${list(키명)}
 		return mav;//return "/list.jsp"; //viewResolver가 알려줌
 	}
+
 }
