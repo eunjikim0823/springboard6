@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  <!-- 3.글쓰기 (content.BoardCommand) #{매개변수명(=멤버변수명)}-->
  <insert id="write" parameterType="board">
      insert into springboard(num,author,title,content,writeday,hsize,mate,type,pwd,filename)
-     values(#{num},#{author},#{title},#{content},sysdate,#{hsize},#{mate},#{type},#{pwd}, #{filename,jdbcType=VARCHAR})
+     values(#{num},#{author},#{title},#{content},sysdate,#{hsize},#{mate},#{type},#{pwd}, #{fileName})
  </insert>
 
  <!-- 4.글상세보기(조회수증가) -->
@@ -49,7 +49,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       update springboard
       set title=#{title},content=#{content},author=#{author},
       hsize=#{hsize},mate=#{mate},type=#{type},
-      pwd=#{pwd},  #{filename,jdbcType=VARCHAR}
+      pwd=#{pwd},  #{fileName}
       where num=#{num}
  </update>
 
@@ -80,7 +80,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         from (
         select row_number() over(order by num desc) as
         row_num
-        ,num, author, title, content, writeday, readcnt,hsize,mate,type
+        ,num, author, title, content, writeday, readcnt,hsize,mate,type,fileName
         from springboard
         )
         <if test="firstRecordIndex !=null and lastRecordIndex != null">

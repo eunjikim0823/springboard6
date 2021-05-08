@@ -11,8 +11,9 @@ public class Board { //BoardDTO,BoardVO
 	private String author,title,content,date;//작성자,글제목,글내용,작성일
 	private int readcnt;//조회수
 	private String pwd; //비밀번호
-	private String filename;
+
 	private String hsize,mate,type; //집사이즈, 가족관계, 주거형태
+	private String fileName;
 	private MultipartFile uploadFile;
 
 	/*
@@ -39,11 +40,12 @@ public class Board { //BoardDTO,BoardVO
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	public String getFilename() {
-		return filename;
+
+	public String getFileName() {
+		return fileName;
 	}
-	public void setFilename(String filename) {
-		this.filename = filename;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 	public void setHsize(String hsize) {
 		this.hsize = hsize;

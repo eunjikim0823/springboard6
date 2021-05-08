@@ -10,13 +10,12 @@ import org.springframework.web.multipart.MultipartFile;
 public class BoardCommand {
 
 	int num;
-	String author,title,content;//num,date,readcnt (x)
-    //추가
-	String writeday;
+	String author,title,content, writeday,pwd;//num,date,readcnt (x)
 	int readcnt;
+
 	String hsize,mate,type;
-	String pwd;
-	String filename;
+
+	String fileName;
 	MultipartFile uploadFile;
 
 	//DTO와 상관이없지만 MyBatis검색때문에 필요한 클래스때문에 추가
@@ -33,12 +32,14 @@ public class BoardCommand {
 		this.uploadFile = uploadFile;
 	}
 
-	public String getFilename() {
-		return filename;
+
+
+	public String getFileName() {
+		return fileName;
 	}
 
-	public void setFilename(String filename) {
-		this.filename = filename;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 
 	public String getPwd() {
