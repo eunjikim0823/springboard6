@@ -62,7 +62,7 @@
 			<!-- <input type="button" class="btn btn-warning btn-lg" value="대표사진 선택"> -->
 
              대표사진<p>
-             <input name="filename" type="file" ><p>
+             <input name="uploadFile" type="file" ><p>
 			비밀번호 :<input type = password name = pwd size=10 maxlength=10><p>
 			<input type="submit" class="btn btn-danger btn-lg" onclick="alert('글쓰기가 완료되었습니다')" value="글쓰기 완료">
 			 <a href="list.do" class="btn btn-danger btn-lg" role="button">글목록</a>
