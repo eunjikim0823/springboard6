@@ -11,6 +11,10 @@ public interface BoardDAO{
 
 	//1.글목록보기
 	public List list() throws DataAccessException;
+	
+	//카테고리
+	//인기순
+	public List getPopList() throws DataAccessException;
 
 
 	//2-1.글쓰기 -게시물의 최댁값 구하기 ->int
@@ -44,9 +48,6 @@ public interface BoardDAO{
 
 	public int getBoardTotalCnt() throws DataAccessException;
 
-	//카테고리
-	//인기순
-	public List getPopList() throws DataAccessException;
 
 }
 

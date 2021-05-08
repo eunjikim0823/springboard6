@@ -17,6 +17,12 @@ public class SqlMapBoardDao extends SqlSessionDaoSupport implements BoardDAO {
 		//select ->레코드 한개이상->queryForList() ->selectList("실행시킬 sql의 id")
 		return getSqlSession().selectList("list");
 	}
+	//카테고리 인기순
+	@Override
+	public List getPopList() throws DataAccessException {
+		// TODO Auto-generated method stub
+		return getSqlSession().selectList("getPopList");
+	}
 
 	@Override
 	public int getNewNum() throws DataAccessException {
@@ -99,12 +105,6 @@ public class SqlMapBoardDao extends SqlSessionDaoSupport implements BoardDAO {
 		return (Integer)getSqlSession().selectOne("getBoardTotalCnt");
 	}
 
-	//카테고리
-	//인기순
-	@Override
-	public List getPopList() throws DataAccessException {
-		// TODO Auto-generated method stub
-		return getSqlSession().selectList("getPopList");
-	}
+
 
 }

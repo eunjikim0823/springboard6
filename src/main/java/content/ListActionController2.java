@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 //public class ListActionController implements Controller {
 @Controller
-public class ListActionController {
+public class ListActionController2 {
 
 	BoardDAO dao;// BoardDAO dao=new BoardDAO();
 
@@ -33,7 +33,7 @@ public class ListActionController {
 
 	// public void test() {}
 
-	@RequestMapping("/list.do")
+	@RequestMapping("/Poplist.do")
 	public ModelAndView handleRequest(HttpServletRequest request,
 			                                                  HttpServletResponse response) throws Exception {
 		System.out.println("ListActionController의 handleRequest()호출됨");
