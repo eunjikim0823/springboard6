@@ -61,23 +61,14 @@
 
 			<!-- <input type="button" class="btn btn-warning btn-lg" value="대표사진 선택"> -->
 
-		   <div class="custom-file" id="inputFile">
-               <input name="file" type="file" class="custom-file-input" id="customFile">
-               <label class="custom-file-label" for="customFile">파일을 선택해 주세요.</label>
-           </div>
+             대표사진<p>
+             <input name="filename" type="file" ><p>
 			비밀번호 :<input type = password name = pwd size=10 maxlength=10><p>
 			<input type="submit" class="btn btn-danger btn-lg" onclick="alert('글쓰기가 완료되었습니다')" value="글쓰기 완료">
 			 <a href="list.do" class="btn btn-danger btn-lg" role="button">글목록</a>
 
 		</form>
     </div><!--contents_write  ---------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-
-
 
 
 
@@ -100,10 +91,4 @@
       });
     </script>
 
-	<script>
-	$(".custom-file-input").on("change", function() {
-	  var fileName = $(this).val().split("\\").pop();
-	  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-	});
-	</script>
 <%@include file ="footer.jsp" %>

@@ -10,7 +10,7 @@ public class Board { //BoardDTO,BoardVO
 	private String author,title,content,date;//작성자,글제목,글내용,작성일
 	private int readcnt;//조회수
 	private String pwd; //비밀번호
-
+	private String filename;
 	private String hsize,mate,type; //집사이즈, 가족관계, 주거형태
 
 
@@ -25,6 +25,18 @@ public class Board { //BoardDTO,BoardVO
 
 	public String getHsize() {
 		return hsize;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 	public void setHsize(String hsize) {
 		this.hsize = hsize;

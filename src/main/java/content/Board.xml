@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  <!-- 3.글쓰기 (content.BoardCommand) #{매개변수명(=멤버변수명)}-->
  <insert id="write" parameterType="board">
      insert into springboard(num,author,title,content,writeday,hsize,mate,type,pwd)
-     values(#{num},#{author},#{title},#{content},sysdate,#{hsize},#{mate},#{type},#{pwd})
+     values(#{num},#{author},#{title},#{content},sysdate,#{hsize},#{mate},#{type},#{pwd},  #{filename,jdbcType=VARCHAR}))
  </insert>
 
  <!-- 4.글상세보기(조회수증가) -->
@@ -48,7 +48,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  <update id="update" parameterType="board">
       update springboard
       set title=#{title},content=#{content},author=#{author},
-      hsize=#{hsize},mate=#{mate},type=#{type}
+      hsize=#{hsize},mate=#{mate},type=#{type},
+      pwd=#{pwd},  #{filename,jdbcType=VARCHAR}
       where num=#{num}
  </update>
 

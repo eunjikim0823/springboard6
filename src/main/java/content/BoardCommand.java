@@ -14,12 +14,20 @@ public class BoardCommand {
 	int readcnt;
 	String hsize,mate,type;
 	String pwd;
-
+	String filename;
 
 
 	//DTO와 상관이없지만 MyBatis검색때문에 필요한 클래스때문에 추가
 	String searchName;//검색분야
 	String searchValue;//검색어
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
 
 	public String getPwd() {
 		return pwd;
