@@ -14,16 +14,16 @@
         </property>
 </bean>
 
-<!-- 2.jdbc.properties파일에서 각각의 DB정보(드라이버명,게정명,암호,,) 
-     ${키명}=>value값을 가져올수 있도록 설정 
+<!-- 2.jdbc.properties파일에서 각각의 DB정보(드라이버명,게정명,암호,,)
+     ${키명}=>value값을 가져올수 있도록 설정
      destroy-method="프로그램 종료시 자동으로 호출할 메서드명을 지정할때
                                  필요한 속성명"
-     close매서드(메모리 해제)(메서드명만 사용할것)                            
+     close매서드(메모리 해제)(메서드명만 사용할것)
 -->
 <bean id="dataSource"
        class="org.apache.commons.dbcp.BasicDataSource"
        destroy-method="close">
-        <property name="driverClassName" 
+        <property name="driverClassName"
                          value="${jdbc.driverClassName}" />
         <property name="url" value="${jdbc.url}" />
         <property name="username" value="${jdbc.username}" />
@@ -36,7 +36,7 @@
   -->
 <bean id="sqlSessionFactory"
         class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="configLocation" 
+        <property name="configLocation"
                          value="WEB-INF/SqlMapConfig.xml" />
         <property name="dataSource" ref="dataSource" />
 </bean>
