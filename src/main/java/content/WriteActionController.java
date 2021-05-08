@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.JsonObject;
@@ -78,6 +79,9 @@ public class WriteActionController {
 		dao.write(data);//data.getWriter() =>#{writer},,,
 
 		System.out.println("Write content="+content);
+
+
+
 		return new ModelAndView("redirect:/list.do");
 
 	}
