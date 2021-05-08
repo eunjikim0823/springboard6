@@ -5,6 +5,10 @@ import java.util.List;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.dao.DataAccessException;
 
+import com.content.dao.BoardCommand;
+import com.content.dao.BoardDAO;
+import com.content.dao.Pagination;
+
 //SqlSessionDaoSupport -> getSqlSession() 상속 ->SqlSession
 public class SqlMapBoardDao extends SqlSessionDaoSupport implements BoardDAO {
 

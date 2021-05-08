@@ -70,7 +70,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         from (
         select row_number() over(order by num desc) as
         row_num
-        ,num, author, title, content, writeday, readcnt, hsize,mate,type
+        ,num, author, title, content, writeday, readcnt, hsize,mate,type,fileName
         from springboard
         )
  </select>
