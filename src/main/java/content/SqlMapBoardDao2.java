@@ -1,12 +1,16 @@
-package content;
+/*package content;
 
 import java.util.List;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 
 //SqlSessionDaoSupport -> getSqlSession() 상속 ->SqlSession
-public class SqlMapBoardDao extends SqlSessionDaoSupport implements BoardDAO {
+public class SqlMapBoardDao2 extends SqlSessionDaoSupport implements BoardDAO {
+
+	@Autowired
+	private BoardDAO boardDAO;
 
 	//SqlSession sqlsession; ->DI(생성자 or Setter Method를 사용) ->소스코드 절약
 	@Override
@@ -108,3 +112,4 @@ public class SqlMapBoardDao extends SqlSessionDaoSupport implements BoardDAO {
 
 
 }
+*/

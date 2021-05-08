@@ -1,5 +1,7 @@
 package content;
 
+import org.springframework.web.multipart.MultipartFile;
+
 //BoardDTO -> 하나의 레코드에 관련된 필드와 연관이 있는 클래스
 //BoardCommand=>실질적으로 사용자로부터 값을 입력받는 필드로만
 //                              구성한 클래스(작성자이름,글제목,글내용) 게시물번호,조회수x
@@ -15,11 +17,21 @@ public class BoardCommand {
 	String hsize,mate,type;
 	String pwd;
 	String filename;
-
+	MultipartFile uploadFile;
 
 	//DTO와 상관이없지만 MyBatis검색때문에 필요한 클래스때문에 추가
 	String searchName;//검색분야
 	String searchValue;//검색어
+
+
+
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
 
 	public String getFilename() {
 		return filename;

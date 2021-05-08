@@ -1,5 +1,6 @@
 package content;
 
+import org.springframework.web.multipart.MultipartFile;
 
 //DTO -> 입력폼의 name와 반드시 같아야 된다. ->액션태그때문에
 
@@ -12,7 +13,7 @@ public class Board { //BoardDTO,BoardVO
 	private String pwd; //비밀번호
 	private String filename;
 	private String hsize,mate,type; //집사이즈, 가족관계, 주거형태
-
+	private MultipartFile uploadFile;
 
 	/*
 	 * private String uploadPath;
@@ -25,6 +26,12 @@ public class Board { //BoardDTO,BoardVO
 
 	public String getHsize() {
 		return hsize;
+	}
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
 	}
 	public String getPwd() {
 		return pwd;

@@ -23,6 +23,7 @@ public interface BoardDAO{
 	//2-2.글쓰기
 	public void write(BoardCommand data) throws DataAccessException;
 
+
 	//3-1.글사셍보기-조회수 증가시키기-> update
 	public void updateReadcnt(String num) throws DataAccessException;
 
