@@ -42,6 +42,7 @@
  </bean> -->
 
  <bean name="/list.do" class="content.ListActionController" />
+ <bean name="/getPopList.do" class="content.ListActionController2" />
 
  <!-- 2.글쓰기 폼으로 이동 -->
  <bean name="/writeui.do"

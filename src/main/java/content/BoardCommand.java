@@ -6,37 +6,36 @@ package content;
 //스프링의 jsp의 action태그처럼 ->입력받은 값을 자동으로 Setter Method를 호출
 
 public class BoardCommand {
-    
+
 	int num;
 	String author,title,content;//num,date,readcnt (x)
     //추가
 	String writeday;
 	int readcnt;
-	
+
 	String hsize,mate,type;
-	
+
 	/*
 	 * String uploadPath;
-	 * 
+	 *
 	 * public String getUploadPath() { return uploadPath; }
-	 * 
+	 *
 	 * public void setUploadPath(String uploadPath) { this.uploadPath = uploadPath;
 	 * }
 	 */
-	
+
 	//DTO와 상관이없지만 MyBatis검색때문에 필요한 클래스때문에 추가
 	String searchName;//검색분야
 	String searchValue;//검색어
-	
+
 	String searchType;//주거형태
 	String searchHsize;//평수
 	String searchMate;//거주형태
-	
-	
+
+
 	public int getNum() { //#{num}
-		System.out.println("getNum()호출됨");
 		return num;
-		
+
 	}
 
 	public void setNum(int num) {

@@ -17,18 +17,18 @@ import org.springframework.web.servlet.ModelAndView;
 public class WatchActionController{
 
 	BoardDAO dao;//BoardDAO dao=new BoardDAO();
-	
+
 	@Required
 	@Autowired
 	public void setDao(BoardDAO dao) { //<property name="dao"></property>
 		this.dao = dao;
-		System.out.println("setDao()호출됨(dao)=>"+dao);
+		System.out.println("WatchActionController setDao()호출됨(dao)=>"+dao);
 	}
     // retrieve.do?num=4 =>get방식
 	@RequestMapping("/watch.do")
-	public ModelAndView handleRequest(HttpServletRequest request, 
+	public ModelAndView handleRequest(HttpServletRequest request,
 			                                                  HttpServletResponse response) throws Exception {
-		
+
 		System.out.println("WatchActionController의 handleRequest()호출됨");
 		// TODO Auto-generated method stub
 		String num=request.getParameter("num");

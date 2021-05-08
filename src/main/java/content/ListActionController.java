@@ -27,7 +27,6 @@ public class ListActionController {
 	@Autowired
 	public void setDao(BoardDAO dao) { // <property name="dao"></property>
 		this.dao = dao;
-		System.out.println("setDao()호출됨(dao)=>" + dao);
 	}
 	// list.do
 

@@ -9,8 +9,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
  <select id="list" resultType="board">
    select * from springboard order by num desc
-
  </select>
+
+  <!-- 인기순<조회수기준> -->
+<select id="getPopList" resultType="board">
+    select * from springboard order by readcnt desc
+ </select>
+
 
  <!-- 2.글쓰기(게시물 번호 최대값구하기) -->
  <select id="getNewNum" resultType="int">
@@ -58,6 +63,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
      '%${searchValue}%' order by num desc
  </select>
 
+
  <select id="getBoardList" resultType="board">
  	select *
         from (
@@ -81,19 +87,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             #{lastRecordIndex}
         </if>
  </select>
- <!-- <select id="getBoardList2" parameterType="pagination" resultType="board">
- 	select *
-        from (
-        select row_number() over(order by readcnt desc) as
-        row_num
-        ,num, author, title, content, writeday, readcnt,hsize,mate,type
-        from springboard
-        )
-        <if test="firstRecordIndex !=null and lastRecordIndex != null">
-            WHERE row_num BETWEEN #{firstRecordIndex} AND
-            #{lastRecordIndex}
-        </if>
- </select> -->
 
  <select id="getBoardTotalCnt" resultType="int">
  	select count(*) from springboard
@@ -102,25 +95,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!--  ///////////////////////////////////////////////////////////////////////////// -->
  <!-- 카테고리 추가 -->
 
- <!-- 인기순<조회수기준> -->
-<select id="getPopList" resultType="board">
-    select * from springboard order by readcnt desc
- </select>
-
-
- <select id="getPopList2" resultType="board"> <!-- 10평 20평 글자수 보고 검색기능원함 -->
- 	select *
-        from (
-        select row_number() over(order by readcnt desc) as
-        row_readcnt
-        ,num, author, title, content, writeday, readcnt, hsize,mate,type
-        from springboard
-        )
-        <if test="firstRecordIndex !=null and lastRecordIndex != null">
-            WHERE row_num BETWEEN #{firstRecordIndex} AND
-            #{lastRecordIndex}
-         </if>
- </select>
 
 
 </mapper>

@@ -11,7 +11,7 @@ public interface BoardDAO{
 
 	//1.글목록보기
 	public List list() throws DataAccessException;
-	
+
 	//카테고리
 	//인기순
 	public List getPopList() throws DataAccessException;
@@ -47,6 +47,7 @@ public interface BoardDAO{
 	public List getBoardList2(Pagination pagination) throws DataAccessException;
 
 	public int getBoardTotalCnt() throws DataAccessException;
+
 
 
 }

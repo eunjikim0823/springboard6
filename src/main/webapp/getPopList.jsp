@@ -15,15 +15,14 @@
 				<select title="" onchange="window.open(value,'_self');">
 				    <option value="freeBoard.html" selected>이동1</option>
 				       <option value="freeBoard.html" >이동1</option>
-				    <option value="Main.jsp">이동2</option>
+				    <option value="Main.do">이동2</option>
 				</select>
 
 
  				 <select name="type" class="type"  onchange="window.open(value,'_self');">
 				  		<option selected value hidden class="type">조회기준</option>
-				  		<option value="Poplist.jsp" class="인기순">인기순</a></option>
-				  		<option value="list.jsp" class="최신순">최신순</option>
-
+				  		<option value="getPopList.do" class="인기순">인기순</a></option>
+				  		<option value="list.do" class="최신순">최신순</option>
 				  	</select>
 
 			  		<select name="searchType" class="searchType">
@@ -72,29 +71,25 @@
 	</nav>
 
 		<hr/>
-		<a href="Poplist.jsp" class="btn btn-danger icon3" role="button">랄랄라</a>
-
 
 			<%
-
-				ArrayList getPopList = (ArrayList) request.getAttribute("getPopList");//${list}
-				if (getPopList != null) {//데이터가 존재한다면
-					Iterator iter = getPopList.iterator();
-					while (iter.hasNext()) {//꺼낼 데이터가 존재한다면
-						//Board data=(Board)iter.next();//Object ->(Board)형변환
-						BoardCommand data = (BoardCommand) iter.next();
-						//-------------------------------------------------------
-						int num = data.getNum();
-						String title = data.getTitle();
-						String author = data.getAuthor();
-						String hsize = data.getHsize();
-						String mate = data.getMate();
-						String type = data.getType();
-						//String writeday=data.getDate();//날짜출력 ->10글자뿐만 출력하라
-						String writeday = data.getWriteday();
-						int readcnt = data.getReadcnt();//조회수
-						//------------------------------------------------
-
+			ArrayList getPopList = (ArrayList) request.getAttribute("getPopList");//${list}
+			if (getPopList != null) {//데이터가 존재한다면
+				Iterator iter = getPopList.iterator();
+				while (iter.hasNext()) {//꺼낼 데이터가 존재한다면
+					//Board data=(Board)iter.next();//Object ->(Board)형변환
+					BoardCommand data = (BoardCommand) iter.next();
+					//-------------------------------------------------------
+					int num = data.getNum();
+					String title = data.getTitle();
+					String author = data.getAuthor();
+					String hsize = data.getHsize();
+					String mate = data.getMate();
+					String type = data.getType();
+					//String writeday=data.getDate();//날짜출력 ->10글자뿐만 출력하라
+					String writeday = data.getWriteday();
+					//------------------------------------------------
+					int readcnt = data.getReadcnt();//조회수
 			%>
 
 
@@ -141,12 +136,14 @@
 				} //end while
 				} //end if
 				%>
+
+
 <script>
 
  $(document).ready(function(){
 	 $('.type').on('change',function(){
-		 alert(this.value);
-		// alert($(".type option:selected").val())
+		// alert(this.value);
+		 alert($(".type option:selected").val())
 	 });
 
  });

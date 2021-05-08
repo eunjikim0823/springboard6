@@ -15,15 +15,13 @@
 				<select title="" onchange="window.open(value,'_self');">
 				    <option value="freeBoard.html" selected>이동1</option>
 				       <option value="freeBoard.html" >이동1</option>
-				    <option value="Main.jsp">이동2</option>
+				    <option value="Main.do">이동2</option>
 				</select>
-
 
  				 <select name="type" class="type"  onchange="window.open(value,'_self');">
 				  		<option selected value hidden class="type">조회기준</option>
-				  		<option value="Poplist.jsp" class="인기순">인기순</a></option>
-				  		<option value="list.jsp" class="최신순">최신순</option>
-
+				  		<option value="getPopList.do" class="인기순">인기순</option>
+				  		<option value="list.do" class="최신순">최신순</option>
 				  	</select>
 
 			  		<select name="searchType" class="searchType">
@@ -70,7 +68,7 @@
 			</div><!--col-md-6 col-sm-6-->
 		</div><!--row  -->
 	</nav>
-		<a href="Poplist.jsp" class="btn btn-danger icon3" role="button">랄랄라</a>
+
 		<hr/>
 
 			<%
@@ -141,7 +139,7 @@
 
  $(document).ready(function(){
 	 $('.type').on('change',function(){
-		 alert(this.value);
+	//	 alert(this.value);
 		 alert($(".type option:selected").val())
 	 });
 

@@ -98,13 +98,13 @@ public class SqlMapBoardDao extends SqlSessionDaoSupport implements BoardDAO {
 		return getSqlSession().selectList("getBoardList2", pagination);
 	}
 
+
 	//토탈
 	@Override
 	public int getBoardTotalCnt() throws DataAccessException {
 
 		return (Integer)getSqlSession().selectOne("getBoardTotalCnt");
 	}
-
 
 
 }
