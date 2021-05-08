@@ -12,12 +12,6 @@
 		<div class="row">
 			<div class="col-md-8 col-sm-8">
 
-				<select title="" onchange="window.open(value,'_self');">
-				    <option value="freeBoard.html" selected>이동1</option>
-				       <option value="freeBoard.html" >이동1</option>
-				    <option value="Main.do">이동2</option>
-				</select>
-
  				 <select name="type" class="type"  onchange="window.open(value,'_self');">
 				  		<option selected value hidden class="type">조회기준</option>
 				  		<option value="getPopList.do" class="인기순">인기순</option>

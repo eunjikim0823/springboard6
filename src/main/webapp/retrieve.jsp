@@ -77,6 +77,7 @@
 		  <!-- 	<input type="button" class="btn btn-warning btn-lg" value="대표사진 선택">
 		  	<input type="button" class="btn btn-warning btn-lg" onclick="delbtn();" value="사진 삭제"> 	 -->
 
+			비밀번호 :<input type = password name = pwd size=10 maxlength=10><p>
 			<input type="submit" class="btn btn-danger btn-lg" onclick="alert('글수정이 완료되었습니다')"  value="수정완료" />
            <a href="delete.do?num=<%= num %>" type="button" onclick="alert('글삭제가 완료되었습니다')" class="btn btn-danger btn-lg">삭제</a>
 			<a href="list.do" class="btn btn-danger btn-lg" role="button">글목록</a>

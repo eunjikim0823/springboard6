@@ -9,16 +9,16 @@ public class Board { //BoardDTO,BoardVO
 	private int num;//게시물번호
 	private String author,title,content,date;//작성자,글제목,글내용,작성일
 	private int readcnt;//조회수
-	
+	private String pwd; //비밀번호
 
-	private String hsize,mate,type;
-	
+	private String hsize,mate,type; //집사이즈, 가족관계, 주거형태
+
 
 	/*
 	 * private String uploadPath;
-	 * 
+	 *
 	 * public String getUploadPath() { return uploadPath; }
-	 * 
+	 *
 	 * public void setUploadPath(String uploadPath) { this.uploadPath = uploadPath;
 	 * }
 	 */
@@ -77,6 +77,6 @@ public class Board { //BoardDTO,BoardVO
 	public void setReadcnt(int readcnt) {
 		this.readcnt = readcnt;
 	}
-	
-	
+
+
 }

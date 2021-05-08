@@ -12,26 +12,22 @@ public class BoardCommand {
     //추가
 	String writeday;
 	int readcnt;
-
 	String hsize,mate,type;
+	String pwd;
 
-	/*
-	 * String uploadPath;
-	 *
-	 * public String getUploadPath() { return uploadPath; }
-	 *
-	 * public void setUploadPath(String uploadPath) { this.uploadPath = uploadPath;
-	 * }
-	 */
+
 
 	//DTO와 상관이없지만 MyBatis검색때문에 필요한 클래스때문에 추가
 	String searchName;//검색분야
 	String searchValue;//검색어
 
-	String searchType;//주거형태
-	String searchHsize;//평수
-	String searchMate;//거주형태
+	public String getPwd() {
+		return pwd;
+	}
 
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
 
 	public int getNum() { //#{num}
 		return num;
@@ -123,28 +119,6 @@ public class BoardCommand {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public String getSearchType() {
-		return searchType;
-	}
 
-	public void setSearchType(String searchType) {
-		this.searchType = searchType;
-	}
-
-	public String getSearchHsize() {
-		return searchHsize;
-	}
-
-	public void setSearchHsize(String searchHsize) {
-		this.searchHsize = searchHsize;
-	}
-
-	public String getSearchMate() {
-		return searchMate;
-	}
-
-	public void setSearchMate(String searchMate) {
-		this.searchMate = searchMate;
-	}
 
 }

@@ -49,7 +49,8 @@ public class WriteActionController {
 			                                       @RequestParam("content") String content,
 			                                       @RequestParam("hsize") String hsize,
 			                                       @RequestParam("mate") String mate,
-			                                       @RequestParam("type") String type
+			                                       @RequestParam("type") String type,
+			                                       @RequestParam("pwd") String pwd
 			)
 			                                           throws Exception {
 		// TODO Auto-generated method stub
@@ -72,10 +73,11 @@ public class WriteActionController {
 		data.setHsize(hsize);
 		data.setMate(mate);
 		data.setType(type);
+		data.setPwd(pwd);
+
 		dao.write(data);//data.getWriter() =>#{writer},,,
 
-
-		System.out.println("content="+content);
+		System.out.println("Write content="+content);
 		return new ModelAndView("redirect:/list.do");
 
 	}
